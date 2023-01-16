@@ -5,6 +5,8 @@ import NavBeforeLogin from "./components/NavBeforeLogin";
 import MyPage from './routes/MyPage.js';
 import Home from './routes/Home.js';
 import HowtoUse from './routes/HowtoUse.js';
+import LoginUi from "./routes/LoginUi";
+
 function App(props) {
 return (
   <BrowserRouter>
@@ -12,6 +14,7 @@ return (
     <Route path="/" element={<Home />}/>
     <Route path="/mypage" element={<MyPage />}/>
     <Route path="/how-to-use" element={<HowtoUse />}/>
+    <Route path="/login-page" element={<LoginUi />}/>
     </Routes>
   </BrowserRouter>
 );

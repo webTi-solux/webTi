@@ -1,0 +1,103 @@
+body {
+  background-color: #EAE9D5;
+}
+
+.main {
+    text-align: center;
+    justify-content: center;
+    display: flex; 
+    padding: 50px;
+    background-color: #EAE9D5;
+  }
+
+  .sub-main {
+    text-align: center;
+  }
+
+  .imgs {
+      padding-top: 60px;
+      padding-left: 30px;
+      padding-bottom: 25px;
+      justify-content: center;
+      display: flex;
+    }
+
+  .logo {
+    width: 80%;
+    height: auto;
+  }
+  
+  span {
+    padding-left: 20px;
+    display: flex;
+  }
+
+  .first-input{
+    display: flex;
+}
+  .second-input{
+      padding-top: 15px;
+      padding-bottom: 15px;
+  }
+
+  .text-id {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    padding: 20px 0 0 25px;
+    font-size: 20px
+  }
+
+  .v-line {
+    position: absolute;
+    border-left: 5px solid #065C94 ;
+    padding: 65px 0 0 25px;
+    margin-left: 200px;
+  }
+
+  .text-pwd {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    padding: 20px 0 0 25px;   
+    font-size: 20px 
+  }
+
+  .v-line2 {
+    position: absolute;
+    border-left: 5px solid #065C94 ;
+    padding: 65px 0 0 25px;
+    margin-left: 200px;
+  }
+
+  input{
+      width: 340px;
+      height: 55px;
+      border-radius: 60px;
+      border: 5px solid #065C94;
+      outline: none;
+      background-color: #fff;
+  }
+  
+  .user-id{
+    padding-left: 220px;
+    font-size: 20px;
+  }
+
+  .user-pwd {
+      padding-left: 220px;
+      font-size: 20px;
+  }
+
+  button{
+      width: 140px;
+      height: 60px;
+      border-radius: 60px;
+      background-color: #065C94;
+      color: white;
+      font-size: 20px;
+      border: none;
+  }
+  .login-button{
+      padding-top: 25px;
+  }
