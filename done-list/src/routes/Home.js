@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React, {Component} from 'react';
 import "../styles/home.css"
 import NavBeforeLogin from "../components/NavBeforeLogin";
+import UnderBar from "../components/UnderBar";
 
 const Home = (props) => {
     return (
@@ -22,8 +23,7 @@ const Home = (props) => {
                     <img src="../imgs/webTi_logo.png"></img>
                 </div>
                 </div>
-                <hr className="real-line"/>
-                <p className="circle1"></p><p className="circle2"></p><p className="circle3"></p>      
+            <UnderBar/>   
             </div>
         );
     }

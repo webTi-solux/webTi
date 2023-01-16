@@ -66,52 +66,11 @@ background-color: #EAE9D5;
     
 }
 
-img {
+.logoImage {
     width : 25%;
     margin-top: 12%;
     margin-left : 185px;
     float: left;
     position :fixed;
     overflow:hidden;
-}
-.real-line {
-    width: 99.9%;
-    align-items: center;
-    position: relative;
-    bottom: -20px;
-    background-color: #065C94;
-    height: 2px;
-}
-
-.circle1 {
-    float:left;
-    left: 70px;
-    top : 32px;
-    position: relative;
-    width : 22px;
-    height : 22px;
-    border-radius: 50%;
-    background-color: #065C94;
-}
-
-.circle2 {
-    float:left;
-    position: relative;
-    left: 600px;
-    top : 32px;
-    width : 22px;
-    height : 22px;
-    border-radius: 50%;
-    background-color: #065C94;
-}
-
-.circle3 {
-    float:left;
-    position: relative;
-    left: 1130px;
-    top : 32px;
-    width : 22px;
-    height : 22px;
-    border-radius: 50%;
-    background-color: #065C94;
 }
