@@ -1,7 +1,5 @@
 body {
   background-color: #EAE9D5;
-  text-align: center;
-  justify-content: center;
 }
 
 .main {
@@ -17,7 +15,7 @@ body {
   }
 
   .imgs {
-      padding-top: 60px;
+      padding-top: 70px;
       padding-left: 30px;
       padding-bottom: 25px;
       justify-content: center;
@@ -29,7 +27,12 @@ body {
     height: auto;
   }
   
-  span {
+  .text-id {
+    padding-left: 20px;
+    display: flex;
+  }
+
+  .text-pwd {
     padding-left: 20px;
     display: flex;
   }
