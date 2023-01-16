@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./styles/myPage.css"
-import NavAfterLogin from "./components/NavAfterLogin";
+import "../styles/myPage.css"
+import NavAfterLogin from "../components/NavAfterLogin";
 
 function MyPage() {
     return (
@@ -12,7 +12,7 @@ function MyPage() {
         <button className="modify-Info">정보 수정</button>
         <button className="log-out">로그아웃</button>
         </div>
-        <img className="img-DL" src="./donelist_mini.png"></img>
+        <img className="img-DL" src="../imgs/donelist_mini.png"></img>
         <button className="directToDL">나의 던리스트 바로가기</button>
         <button className="receivedMsg">받은 쪽지함</button>
         <button className="sendMsg">보낸 쪽지함</button>

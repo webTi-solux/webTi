@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React, {Component} from 'react';
-import "./styles/home.css"
-import NavBeforeLogin from "./components/NavBeforeLogin";
+import "../styles/home.css"
+import NavBeforeLogin from "../components/NavBeforeLogin";
 
 const Home = (props) => {
     return (
@@ -19,7 +19,7 @@ const Home = (props) => {
                 <br/><br/>
                 </div>
                 <div className="logoImage">
-                    <img src="./webTi_logo.png"></img>
+                    <img src="../imgs/webTi_logo.png"></img>
                 </div>
                 </div>
                 <hr className="real-line"/>

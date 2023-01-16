@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./fixedNav.css"
+import "../styles/fixedNav.css"
 
 class NavAfterLogin extends Component {
 	render(){

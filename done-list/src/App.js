@@ -1,7 +1,7 @@
 import {useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React, {Component} from 'react';
-import NavBeforeLogin from "./routes/components/NavBeforeLogin";
+import NavBeforeLogin from "./components/NavBeforeLogin";
 import MyPage from './routes/MyPage.js';
 import Home from './routes/Home.js';
 import HowtoUse from './routes/HowtoUse.js';

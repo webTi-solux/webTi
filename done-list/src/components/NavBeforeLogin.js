@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./fixedNav.css"
+import "../styles/fixedNav.css"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 class NavBeforeLogin extends Component {
