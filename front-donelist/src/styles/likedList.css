@@ -1,0 +1,14 @@
+.list-area {
+    background-color: white;
+    width: 420px;
+    height:500px;
+    margin-left: 820px;
+    margin-top: 80px;
+}
+
+.liked-list-items {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
