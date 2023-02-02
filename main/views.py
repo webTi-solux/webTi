@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import MemberSerializer, DoneListSerializer, LikeSerializer, DoneContentSerializer
-from .models import Member, DoneList, Like
-# Create your views here.
+from rest_framework.decorators import api_view
+from .serializers import MemberSerializer, DoneListSerializer, LikeSerializer, LikeContentSerializer
+from .models import Member, DoneList, Like, Comment, DM
+
 
 class MemberViewset(viewsets.ModelViewSet):
     queryset = Member.objects.all()
@@ -37,3 +38,21 @@ donelist_detail = DoneListViewset.as_view({
 class LikeViewset(viewsets.ModelViewSet):
     queryset = Like.objects.all()
     serializer_class = LikeSerializer
+
+like_list = LikeViewset.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+
+like_detail = LikeViewset.as_view({
+    'get': 'retrieve',
+    'delete': 'destroy'
+})
+
+class LikeContentViewset(viewsets.ModelViewSet):
+    queryset = Like.objects.all()
+    serializer_class = LikeContentSerializer
+
+likecontent_list = LikeContentViewset.as_view({
+    'get' : 'list'
+})

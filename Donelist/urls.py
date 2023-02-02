@@ -17,14 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from main.views import DoneListViewset, LikeViewset, member_list, member_detail, donelist_detail, donelist_list
+from main.views import member_list, member_detail, donelist_detail, donelist_list, like_list, like_detail, likecontent_list
 
 
-donelistrouter = routers.DefaultRouter()
-donelistrouter.register('', DoneListViewset)
-
-likerouter = routers.DefaultRouter()
-donelistrouter.register('', LikeViewset)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -32,5 +27,8 @@ urlpatterns = [
     path("member/<pk>/", member_detail),
     path("donelist/", donelist_list),
     path("donelist/<pk>/", donelist_detail),
-    path("like/", include(likerouter.urls)),
+    path("like/", like_list),
+    path("like/<pk>/", like_detail),
+    path("likecontent/", likecontent_list)
+
 ]
