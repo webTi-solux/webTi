@@ -1,0 +1,104 @@
+.howtouse-container1 {
+    position: relative;
+    margin-left: 130px;
+    margin-top: 70px;
+}
+
+.howtouse-logoImg {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    margin-left: 50px;
+}
+
+.howtouse-Team {
+    position: absolute;
+    font-family: "나눔스퀘어-bold";
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 420px;
+    margin-top: 50px;
+}
+
+.howtouse-Title {
+    position: absolute;
+    font-family: "나눔스퀘어-bold";
+    margin-left: 420px;
+    margin-top: 110px;
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+.howtouse-way {
+    position: absolute;
+    font-family: "나눔스퀘어-bold";
+    margin-left: 420px;
+    margin-top: 150px;
+    font-size: 17px;
+}
+
+.howtouse-container2 {
+    position: relative;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+.howtouse-DLimg {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    margin-left: 800px;
+    margin-top: 380px;
+}
+
+.howtouse-tomakeTitle {
+    position: absolute;
+    margin-top: 340px;
+    font-family: "나눔스퀘어-bold";
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.howtouse-tomake-1 {
+    position: absolute;
+    margin-top: 400px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
+
+.howtouse-tomake-2-1 {
+    position: absolute;
+    margin-top: 440px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
+
+.howtouse-tomake-2-2 {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 460px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
+
+.howtouse-tomake-3-1 {
+    position: absolute;
+    margin-top: 490px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
+
+.howtouse-tomake-3-2 {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 510px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
+
+.howtouse-tomake-4 {
+    position: absolute;
+    margin-top: 550px;
+    font-size: 17px;
+    font-family: "맑은고딕";
+}
