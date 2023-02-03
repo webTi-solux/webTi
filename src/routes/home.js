@@ -7,6 +7,8 @@ import NavAfterLogin from "../components/NavAfterLogin";
 import logo from "../imgs/webTi_logo.png";
 
 const Home = (props) => {
+
+    
     return (
         <div>
         {sessionStorage.length === 2 ? <NavAfterLogin/> : <NavBeforeLogin />}

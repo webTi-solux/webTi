@@ -15,13 +15,14 @@ import LikedList from "./components/LikedList";
 import Main from './routes/Main';
 import ModalCreateDL from './components/ModalCreateDL';
 import WriteDetail from './routes/ParentofWriteDetail';
-import VisitDetail from './routes/ParentofVisitDetail';
-
+import VisitDetail from './routes/VisitDetail';
 import YearMonthSelectBox from './components/YearMonthSelectBox';
 import ReceivedMsgs from './routes/ReceivedMsgTemplate';
 import MessageTest from './components/MessageTest';
 import SendMsgs from './routes/SendMsgTemplate';
 import DonelistBar from './components/DonelistBar';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -35,6 +36,14 @@ const GlobalStyles = createGlobalStyle`
 
 function App() {
 
+
+  useEffect(() => {
+    
+    getDonelists();
+    
+  }, [])
+
+  
   return (
     <div>
       <GlobalStyles/>
@@ -52,7 +61,7 @@ function App() {
         {/*<Route path="/liked-list" element={<LikedList/>}/>*/}
         <Route path="/main" element={<Main />}/>
         <Route path="/write-detail" element={<WriteDetail/>}/>
-        <Route path="/visit-detail" element={<VisitDetail/>}/>
+        <Route path="/visit-detail/:doneId" element={<VisitDetail/>}/>
         <Route path="/cdlw-page" element={<ModalCreateDL />}/>
         <Route path="/selectbox-page" element={<YearMonthSelectBox />}/>
         <Route path="/msgs-to-me" element={<ReceivedMsgs />}/>
