@@ -14,10 +14,11 @@ class DoneListSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class DoneContentSerializer(serializers.ModelSerializer):
+    userId = MemberSerializer(read_only = True)
+
     class Meta:
         model = DoneList
-        fields = '__all__'
-        lookup_field = 'userId'
+        fields = ('userId', '_id')
     
 
 class LikeSerializer(serializers.ModelSerializer):
@@ -27,10 +28,10 @@ class LikeSerializer(serializers.ModelSerializer):
 
 
 class LikeContentSerializer(serializers.ModelSerializer):
-    userId = MemberSerializer(read_only = True)
+    doneId = DoneContentSerializer(read_only = True)
     class Meta:
         model = Like
-        fields = ('_id', 'userId','doneId')
+        fields = ('_id', 'userId','doneId',)
 
 
         
