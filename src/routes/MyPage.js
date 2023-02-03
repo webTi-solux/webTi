@@ -26,12 +26,14 @@ const MyPage = (props) => {
         axios.get("/likecontent/").then((res) => {
 
             let likefilter = res.data.filter(x=> {
+                
+    console.log(x.doneId._id)
+
                 return x.userId === sessionStorage.userId
             })
 
             getLike(likefilter)
     })}, [])
-
     return (
         <div>
 
@@ -47,12 +49,15 @@ const MyPage = (props) => {
         <button className="mypage-receivedMsg">받은 쪽지함</button>
         <button className="sendMsg">보낸 쪽지함</button>
         <div>
+        </div>
+        <div className="container_myLiked"> 
+        <div className="likecontainer">
+            {like.length > 0 ? like.map((like) => <LikedList key={like._id} doneId={like.doneId}/> ) : <p>다른 사람의 donelist에 좋아요를 눌러보세요!</p>}
+        </div>
+
+        </div>
         <button className="Title_myLiked">내가 좋아요를 누른 던리스트</button>
-        </div>
-        <div>
-            {/*<button liked={liked} setLiked={setLiked} onClick={() => handleLiked()}>좋아요기능테스트</button>*/}
-        </div>
-        <LikedList />
+
         <UnderBar/>
         </div>
     );

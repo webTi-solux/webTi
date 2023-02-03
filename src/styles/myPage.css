@@ -98,9 +98,13 @@ background-color: #EAE9D5;
 }
 
 .container_myLiked {
-    position: relative;
-    padding-left: 820px;
-    padding-top: 100px;
+    position: absolute;
+    left: 830px;
+    top: 120px;
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    background-color: white;
 }
 
 .Title_myLiked {
@@ -159,4 +163,13 @@ background-color: #EAE9D5;
     height : 22px;
     border-radius: 50%;
     background-color: #065C94;
+}
+
+.likecontainer{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 360px;
+    height: 330px;
+    overflow-y: scroll;
 }

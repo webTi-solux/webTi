@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import React, {Component} from 'react';
 import styled from "styled-components";
+import moment from 'moment';
 
 const Info_period = styled.div`
 position: absolute;
@@ -8,18 +9,19 @@ float:left;
 margin-top: 50px;
 margin-left: 695px;
 font-family: "맑은고딕";
+font-size: 20px;
 `;
 
-function Period({startDate, finishDate}) {
-    const [date, setDate] = useState([
-        new Date(startDate),
-        new Date(finishDate)
-    ]);
+function Period({start, finish}) {
+    const startDate = moment(start).format('YYYY.MM')
+    const finishDate = moment(finish).format('YYYY.MM')
+    console.log()
+
 
     return (
         <div>
         <Info_period>
-            yy.mm ~ yy.mm
+            {startDate} ~ {finishDate}
         </Info_period>
         </div>
     );

@@ -8,6 +8,7 @@ import Period from "./Period";
 import LikeBtn from "./LikeBtn";
 import Comment from "./Comment";
 import WriteMessage from "./MsgModal";
+import axios from "axios";
 
 const VisitInfo_title = styled.div`
 position: absolute;
@@ -127,21 +128,25 @@ margin-left: 980px;
     margin-top: 190px;
 `;
 
-const Visit_blue =() => {
+const Visit_blue =({donelist}) => {
     
     const [popup, setPopup] = useState(false);
-    const location = useLocation();
-    const seeQ1 = location.state.writeQ1;
-    const seeQ2 = location.state.writeQ2;
-    const seeQ3 = location.state.writeQ3;
-    const seeActTag = location.state.tag1;
-    const seeMajorTag = location.state.tag2;
     //console.log('state', location.state);
+
+
+
+
+    const seeQ1 = donelist.Whatis;
+    const seeQ2 = donelist.Whatdid;
+    const seeQ3 = donelist.Episode;
+    const seeActTag = donelist.Activity;
+    const seeMajorTag = donelist.Major;
+
     return (
         <div>
             <div>
             <VisitInfo_title>Programming Club "SOLUX"</VisitInfo_title>
-            <div><Period/></div>
+            <div><Period start={donelist.startDate} finish={donelist.finishDate} /></div>
             <div>
             <VisitQ1_question>WHAT IS ? </VisitQ1_question>
             <VisitQ1_area>{seeQ1}</VisitQ1_area>
@@ -158,7 +163,7 @@ const Visit_blue =() => {
             <Major_Tag_Area>{seeMajorTag}</Major_Tag_Area>
             <div>
                 <Visit_Btn_Area>
-                    <LikeBtn/>
+                    <LikeBtn doneId={donelist._id}/>
                     <div>
             <button type="button" className="MessageBtn" onClick={() => setPopup(!popup)}>
                 <img width="47px" src={toSendingMsg} />
