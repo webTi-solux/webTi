@@ -41,7 +41,7 @@ const MyPage = (props) => {
         <div className="profile">
         <p className="user-picture"></p>
         <MyPageGreeting />
-        <button className="modify-Info">정보수정</button>
+        <Link to="/modify-my-info-page"><button className="modify-Info">정보수정</button></Link>
         <button className="log-out" onClick={onLogout}>로그아웃</button>
         </div>
         <img src={dl_mini} alt="dl_mini" className="img-DL"></img>

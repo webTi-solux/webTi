@@ -11,7 +11,7 @@ const Home = (props) => {
     
     return (
         <div>
-        {sessionStorage.length === 2 ? <NavAfterLogin/> : <NavBeforeLogin />}
+        {sessionStorage.length >0 ? <NavAfterLogin/> : <NavBeforeLogin />}
         <div className="home-main">
             <div className="home-text">
                 <h2 className="slogan">What Have You Done?
