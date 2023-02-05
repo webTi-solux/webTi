@@ -8,7 +8,7 @@ const WriteInfo_title = styled.div`
 float:left;
 font-family: "BlackOpsOne";
 color: white;
-background-color: ${props => props.color || "#6582BB"};
+background-color: ${props => props.color || "#BA6AA4"};
 width: 500px;
 height: 40px;
 line-height: 40px;
@@ -26,7 +26,7 @@ margin-top: 110px;
 margin-left: -500px;
 font-family: "BlackOpsOne";
 font-size: 20px;
-color: ${props => props.color || "#6582BB"};
+color: ${props => props.color || "#BA6AA4"};
 `;
 
 const WriteQ1_area = styled.textarea`
@@ -34,7 +34,7 @@ border-radius: 10px;
     width: 1000px;
     height: 80px;
     background-color: transparent;
-    border-color: ${props => props.color || "#6582BB"};
+    border-color: ${props => props.color || "#BA6AA4"};
     border-width: 3px;
     margin-left: 185px;
     margin-top: 65px;
@@ -46,7 +46,7 @@ margin-top: 30px;
 margin-left: 185px;
 font-family: "BlackOpsOne";
 font-size: 20px;
-color:  ${props => props.color || "#6582BB"};
+color:  ${props => props.color || "#BA6AA4"};
 `;
 
 const WriteQ2_area = styled.textarea`
@@ -54,7 +54,7 @@ border-radius: 10px;
 width: 1000px;
 height: 100px;
 background-color: transparent;
-border-color: ${props => props.color || "#6582BB"};
+border-color: ${props => props.color || "#BA6AA4"};
 border-width: 3px;
 margin-left: 185px;
 margin-top: 10px;
@@ -66,7 +66,7 @@ margin-top: 30px;
     margin-left: 185px;
     font-family: "BlackOpsOne";
     font-size: 20px;
-    color:  ${props => props.color || "#6582BB"};
+    color:  ${props => props.color || "#BA6AA4"};
 `;
 
 const WriteQ3_area = styled.textarea`
@@ -74,7 +74,7 @@ const WriteQ3_area = styled.textarea`
     width: 1000px;
     height: 100px;
     background-color: transparent;
-    border-color: ${props => props.color || "#6582BB"};
+    border-color: ${props => props.color || "#BA6AA4"};
     border-width: 3px;
     margin-left: 185px;
     margin-top: 10px;
@@ -111,9 +111,10 @@ function WriteDetail_pink() {
         //writePost();
     }
 
-    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴"];
-    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열"];
+    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "#교내활동"];
+    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "#기타"];
 
+    
     let [activityTagActive, setactivityTagActive] = useState("");
     let [majorTagActive, setmajorTagActive] = useState("");
 
