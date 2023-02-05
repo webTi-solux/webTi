@@ -1,5 +1,5 @@
 import React from 'react';
-import NavAfterLogin from '../components/NavAfterLogin';
+import NavAfterLogin from '../components/NavAfterLogin_blue';
 import UnderBar from '../components/UnderBar';
 import "../styles/AllAboutMsg.css";
 import ReceivedMsgItem from '../components/ReceivedMsgItem';

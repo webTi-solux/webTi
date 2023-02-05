@@ -114,8 +114,9 @@ const WriteDetail_blue =(props)  => {
         });
     }
 
-    let activityTag = ["#공모전", "#동아리", "#학회", "#서포터즈", "#인턴"];
-    let majorTag = ["#상경계열", "#자연계열", "#공과계열", "#어문계열", "#인문계열", "#예체능계열"];
+    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "#교내활동"];
+    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "#기타"];
+
 
     const [activityTagActive, setactivityTagActive] = useState("");
     const [majorTagActive, setmajorTagActive] = useState("");
@@ -140,7 +141,7 @@ const WriteDetail_blue =(props)  => {
         <form>
             <div>
             <WriteInfo_title>Programming Club "SOLUX"</WriteInfo_title>
-            <Period/>
+            <Period start={sessionStorage.startDate} finish={sessionStorage.finishDate}/>
             </div>
             <div>
             <WriteQ1_question>WHAT IS ? </WriteQ1_question>

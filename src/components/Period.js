@@ -15,7 +15,11 @@ font-size: 20px;
 function Period({start, finish}) {
     const startDate = moment(start).format('YYYY.MM')
     const finishDate = moment(finish).format('YYYY.MM')
-    console.log()
+
+    useEffect(() => {
+        sessionStorage.setItem("startDate", startDate)
+        sessionStorage.setItem("finishDate", finishDate)
+    }, [])
 
 
     return (

@@ -1,6 +1,6 @@
 import '../styles/ModifyMyInfo.css';
 import logo from "../imgs/webTi_logo.png";
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import UnderBar from "../components/UnderBar";
 import axios from 'axios';
 import { useState, useEffect } from 'react';

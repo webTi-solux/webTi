@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import React, { Component } from "react";
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import CalendarBar from "../components/CalendarBar";
 import "../styles/Main.css";
 import ModalCreateDL from "../components/ModalCreateDL";
 import DonelistBar from "../components/DonelistBar";
+import { useParams } from "react-router-dom";
 
 const Main = (props) => {
 let [adYear, setAdYear] = useState(2020); //가입년도를 숫자로 받는다고 가정
@@ -38,6 +39,8 @@ const showModal = () => {
             
             </div> );
     };
+
+    let {userId} = useParams();
 
 return (
     <div className="DL-container">

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import home from "../styles/home.css";
 import UnderBar from "../components/UnderBar";
 import NavBeforeLogin from "../components/NavBeforeLogin";
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import logo from "../imgs/webTi_logo.png";
 
 const Home = (props) => {

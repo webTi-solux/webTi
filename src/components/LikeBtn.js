@@ -45,8 +45,8 @@ const LikeBtn = ({doneId}) => {
 
       useEffect(() => {
         heartlists();
-        console.log(state)
-      },[])
+
+      }, )
 
     return (
         <React.Fragment>

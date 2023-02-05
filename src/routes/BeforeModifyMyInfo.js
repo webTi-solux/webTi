@@ -1,6 +1,6 @@
 import '../styles/BeforeModifyMyInfo.css';
 import logo from "../imgs/webTi_logo.png";
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import UnderBar from "../components/UnderBar";
 
 // 내 정보 수정 화면에 들어가기 전, 계정 확인 화면. 로그인 화면과 유사.
