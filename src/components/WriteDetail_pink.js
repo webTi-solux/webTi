@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styled from "styled-components";
 import "../styles/WriteDetail.css"
 import Period from "../components/Period";
+import axios from "axios";
 
 const WriteInfo_title = styled.div`
 float:left;
@@ -81,14 +82,10 @@ const WriteQ3_area = styled.textarea`
     resize: none;
 `;
 
-function WriteDetail_pink() {
+function WriteDetail_green() {
 
-    const [state, setState] = useState({
-        writeWhatis:"",
-        writeWhatdidyoudo:"",
-        writeEpisode:"",
-        }
-    );
+
+
 
     const handleChangeState = (e) => {
         e.preventDefault();
@@ -105,67 +102,102 @@ function WriteDetail_pink() {
         console.log('move to here',state);
     }*/}
 
-    const handleSubmit =(e) => {
+    // post
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(state);
-        //writePost();
+
+        // setState((prevState) => ({
+        //     ...prevState,
+        //     Activity: activityTagActive,
+        //     Major: majorTagActive,
+        // }))
+
+            console.log(state);
+
+
+        // writePost();
+        // activity, major (해시태그) 안 들어감
+        // 날짜 선택 안 할 경우 undefined로 들어감 -> 해결
+        try {
+            await axios.post('/donelist/', state)
+            .then((response) => {
+                console.log(response.status);
+                console.log(response.data);
+            })} catch(e) {
+                console.log(e);
+            }
     }
 
-    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "#교내활동"];
-    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "#기타"];
+    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "# 교내활동"];
+    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "# 기타"];
 
-    
     let [activityTagActive, setactivityTagActive] = useState("");
     let [majorTagActive, setmajorTagActive] = useState("");
 
     const toggleActive1 = (e) => {
-        setactivityTagActive((prev) => {
-        e.preventDefault();
-        return e.target.value;
+        setactivityTagActive(e.target.value);
+        setState({
+            ...state,
+            Activity: e.target.value,
         });
-        console.log(e.target.value);
+            e.preventDefault();
     };
 
     const toggleActive2 = (e) => {
-        setmajorTagActive((prev) => {
-        e.preventDefault();
-        return e.target.value;
+        setmajorTagActive(e.target.value);
+        setState({
+            ...state,
+            Major: e.target.value,
         });
-        console.log(e.target.value);
+        e.preventDefault();
     };
+
+    const [state, setState] = useState({
+        Whatis:"",
+        Whatdid:"",
+        Episode:"",
+        title: sessionStorage.Title,
+        startDate: sessionStorage.startDate,
+        finishDate: sessionStorage.finishDate,
+        Major: majorTagActive,
+        Activity: activityTagActive,
+        Colorcode: sessionStorage.DLColor,
+        userId: sessionStorage.userId
+        }
+    );
 
     return (
         <form>
             <div>
-            <WriteInfo_title color="#BA6AA4">Programming Club "SOLUX"</WriteInfo_title>
+            <WriteInfo_title color="#BA6AA4">{sessionStorage.Title}</WriteInfo_title>
             <Period/>
             </div>
             <div>
             <WriteQ1_question color="#BA6AA4">WHAT IS ? </WriteQ1_question>
-            <WriteQ1_area name="writeWhatis" color="#BA6AA4"
-            value={state.writeWhatis} onChange={handleChangeState}
+            <WriteQ1_area name="Whatis" color="#BA6AA4"
+            value={state.Whatis} onChange={handleChangeState}
             maxLength={200} placeholder="어떤 활동이었는지 간단히 소개해주세요"></WriteQ1_area>
             </div>
             <div>
             <WriteQ2_question color="#BA6AA4">WHAT DID YOU DO ? </WriteQ2_question>
-            <WriteQ2_area name="writeWhatdidyoudo" color="#BA6AA4"
-            value={state.writeWhatdidyoudo} onChange={handleChangeState}
+            <WriteQ2_area name="Whatdid" color="#BA6AA4"
+            value={state.Whatdidyoudo} onChange={handleChangeState}
             maxLength={350} placeholder="구체적으로 어떤 일을 했는지(맡은 역할 등) 소개해주세요"></WriteQ2_area>
             </div>
             <div>
             <WriteQ3_question color="#BA6AA4">EPISODE or ADVICE ? </WriteQ3_question>
-            <WriteQ3_area name="writeEpisode" color="#BA6AA4"
-            value={state.writeEpisode} onChange={handleChangeState}
+            <WriteQ3_area name="Episode" color="#BA6AA4"
+            value={state.Episode} onChange={handleChangeState}
             maxLength={350} placeholder="이 활동이 자신에게 특히 어떤 도움을 주었는지, 기억에 남는 부분은 무엇이었는지 등 자유롭게 소개해주세요"></WriteQ3_area>
             </div>
-            <div className="WritePink-letsHashtag" >Hashtag</div>
-            <div className="WritePink-hashtag-activity">
+            <div className="WriteGreen-letsHashtag" >Hashtag</div>
+            <div className="WriteGreen-hashtag-activity">
         {activityTag.map((item1,idx1) => {
         return (
             <>
             <button key={idx1}
             value={item1}
-            className={"WritePink-hashtagBtn-act" + (item1 == activityTagActive ? "-active" : "")}
+            className={"WriteGreen-hashtagBtn-act" + (item1 == activityTagActive ? "-active" : "")}
             onClick={toggleActive1}
             >
             {item1}
@@ -174,13 +206,13 @@ function WriteDetail_pink() {
         );
     })}
     </div>
-    <div className="WritePink-hashtag-major">
+    <div className="WriteGreen-hashtag-major">
     {majorTag.map((item2, idx2) => {
         return (
             <>
-            <button key={idx2}
+            <button key={idx2} 
             value={item2}
-            className={"WritePink-hashtagBtn-major" + (item2 == majorTagActive ? "-active" : "")}
+            className={"WriteGreen-hashtagBtn-major" + (item2 == majorTagActive ? "-active" : "")}
             onClick={toggleActive2}
             >
             {item2}
@@ -190,10 +222,10 @@ function WriteDetail_pink() {
     })}
     </div>
     <div>
-        <button className="write-complete-pink" onClick={handleSubmit}>COMPLETE</button>
+        <button className="write-complete-green" onClick={handleSubmit}>COMPLETE</button>
     </div>
             </form>
     );
 }
 
-export default WriteDetail_pink;
+export default WriteDetail_green;
