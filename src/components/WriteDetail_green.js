@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styled from "styled-components";
 import "../styles/WriteDetail.css"
 import Period from "../components/Period";
+import axios from "axios";
 
 const WriteInfo_title = styled.div`
 float:left;
@@ -86,7 +87,6 @@ function WriteDetail_green() {
 
 
 
-
     const handleChangeState = (e) => {
         e.preventDefault();
         
@@ -102,36 +102,59 @@ function WriteDetail_green() {
         console.log('move to here',state);
     }*/}
 
-    const handleSubmit =(e) => {
+    // post
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(state);
-        //writePost();
+
+        // setState((prevState) => ({
+        //     ...prevState,
+        //     Activity: activityTagActive,
+        //     Major: majorTagActive,
+        // }))
+
+            console.log(state);
+
+
+        // writePost();
+        // activity, major (해시태그) 안 들어감
+        // 날짜 선택 안 할 경우 undefined로 들어감 -> 해결
+        try {
+            await axios.post('/donelist/', state)
+            .then((response) => {
+                console.log(response.status);
+                console.log(response.data);
+            })} catch(e) {
+                console.log(e);
+            }
     }
 
-    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "#교내활동"];
-    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "#기타"];
+    let activityTag = ["# 공모전", "# 동아리", "# 학회", "# 서포터즈", "# 인턴", "# 교내활동"];
+    let majorTag = ["# 상경계열", "# 자연계열", "# 공과계열", "# 어문계열", "# 인문계열", "# 예체능계열", "# 기타"];
 
     let [activityTagActive, setactivityTagActive] = useState("");
     let [majorTagActive, setmajorTagActive] = useState("");
 
     const toggleActive1 = (e) => {
-        e.preventDefault();
         setactivityTagActive(e.target.value);
-        return e.target.value;
+        setState({
+            ...state,
+            Activity: e.target.value,
+        });
+            e.preventDefault();
     };
 
     const toggleActive2 = (e) => {
-        
-        e.preventDefault();
         setmajorTagActive(e.target.value);
-        console.log(majorTagActive)
-        
+        setState({
+            ...state,
+            Major: e.target.value,
+        });
+        e.preventDefault();
     };
-
 
     const [state, setState] = useState({
         Whatis:"",
-        Whatdidyoudo:"",
+        Whatdid:"",
         Episode:"",
         title: sessionStorage.Title,
         startDate: sessionStorage.startDate,
@@ -142,7 +165,7 @@ function WriteDetail_green() {
         userId: sessionStorage.userId
         }
     );
-    
+
     return (
         <form>
             <div>

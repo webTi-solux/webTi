@@ -17,8 +17,6 @@ function Period({start, finish}) {
     const finishDate = moment(finish).format('YYYY.MM')
 
     useEffect(() => {
-        sessionStorage.setItem("startDate", startDate)
-        sessionStorage.setItem("finishDate", finishDate)
     }, [])
 
 
