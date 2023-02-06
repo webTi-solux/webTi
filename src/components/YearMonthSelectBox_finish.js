@@ -28,8 +28,14 @@ function YearMonthSelectBox() {
         sessionStorage.setItem("finishMonth", e.target.value)
     }
 
+    const onStartSetting = () => {
+        sessionStorage.setItem("finishYear", years[0]);
+        sessionStorage.setItem("finishMonth", months[0]);
+    }
+
     return (
         <div className='selectbox'>
+            {onStartSetting()}
             <div className='selectbox-year'>
                 <select onChange = {onStartYear} className='select-year'>
                     <option  selected disabled>Year</option>

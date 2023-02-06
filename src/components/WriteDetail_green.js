@@ -161,7 +161,7 @@ function WriteDetail_green() {
         finishDate: sessionStorage.finishDate,
         Major: majorTagActive,
         Activity: activityTagActive,
-        Colorcode: sessionStorage.DLcolor,
+        Colorcode: sessionStorage.DLColor,
         userId: sessionStorage.userId
         }
     );
@@ -180,7 +180,7 @@ function WriteDetail_green() {
             </div>
             <div>
             <WriteQ2_question color="#8BBB65">WHAT DID YOU DO ? </WriteQ2_question>
-            <WriteQ2_area name="Whatdidyoudo" color="#8BBB65"
+            <WriteQ2_area name="Whatdid" color="#8BBB65"
             value={state.Whatdidyoudo} onChange={handleChangeState}
             maxLength={350} placeholder="구체적으로 어떤 일을 했는지(맡은 역할 등) 소개해주세요"></WriteQ2_area>
             </div>
