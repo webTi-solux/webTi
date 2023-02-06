@@ -4,9 +4,8 @@ background-color: #EAE9D5;
 } 
 
 *{padding:0;margin:0}
-.nav1{overflow:hidden;height:40px;background-color:#065C94;}
 
-.nav1{text-align:right}
+.nav1{overflow:hidden;height:40px;background-color:#065C94; text-align:right}
 
 .topBar {
     border: 0;
@@ -43,3 +42,27 @@ background-color: #EAE9D5;
 .nav1>ul{display:inline-block ;
     list-style:none}
 .nav1>ul li{float:left;padding:0 30px;line-height:40px; text-decoration:none;color:#fff;font-size:15px}
+
+.nav2 {
+    overflow:hidden;height:40px;background-color:#BA6AA4; text-align:right
+}
+
+.nav2>ul{display:inline-block ;
+    list-style:none}
+.nav2>ul li{float:left;padding:0 30px;line-height:40px; text-decoration:none;color:#fff;font-size:15px}
+
+.nav3 {
+    overflow:hidden;height:40px;background-color:#C7705E; text-align:right
+}
+
+.nav3>ul{display:inline-block ;
+    list-style:none}
+.nav3>ul li{float:left;padding:0 30px;line-height:40px; text-decoration:none;color:#fff;font-size:15px}
+
+.nav4 {
+    overflow:hidden;height:40px;background-color:#8BBB65; text-align:right
+}
+
+.nav4>ul{display:inline-block ;
+    list-style:none}
+.nav4>ul li{float:left;padding:0 30px;line-height:40px; text-decoration:none;color:#fff;font-size:15px}

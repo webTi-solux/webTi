@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import "../styles/myPage.css"
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import UnderBar from "../components/UnderBar";
 import dl_mini from "../imgs/donelist_mini.png";
 import MyPageGreeting from "../components/MyPageGreeting";
@@ -41,11 +41,11 @@ const MyPage = (props) => {
         <div className="profile">
         <p className="user-picture"></p>
         <MyPageGreeting />
-        <button className="modify-Info">정보수정</button>
+        <Link to="/modify-my-info-page"><button className="modify-Info">정보수정</button></Link>
         <button className="log-out" onClick={onLogout}>로그아웃</button>
         </div>
         <img src={dl_mini} alt="dl_mini" className="img-DL"></img>
-        <button className="directToDL">나의 던리스트 바로가기</button>
+        <Link to="/main"><button className="directToDL">나의 던리스트 바로가기</button></Link>
         <button className="mypage-receivedMsg">받은 쪽지함</button>
         <button className="sendMsg">보낸 쪽지함</button>
         <div>

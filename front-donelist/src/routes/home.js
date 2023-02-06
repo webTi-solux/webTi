@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import home from "../styles/home.css";
 import UnderBar from "../components/UnderBar";
 import NavBeforeLogin from "../components/NavBeforeLogin";
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import logo from "../imgs/webTi_logo.png";
 
 const Home = (props) => {
@@ -11,7 +11,7 @@ const Home = (props) => {
     
     return (
         <div>
-        {sessionStorage.length === 2 ? <NavAfterLogin/> : <NavBeforeLogin />}
+        {sessionStorage.length >0 ? <NavAfterLogin/> : <NavBeforeLogin />}
         <div className="home-main">
             <div className="home-text">
                 <h2 className="slogan">What Have You Done?

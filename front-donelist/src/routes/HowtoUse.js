@@ -1,7 +1,7 @@
 import {useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React, {Component} from 'react';
-import NavAfterLogin from "../components/NavAfterLogin";
+import NavAfterLogin from "../components/NavAfterLogin_blue";
 import NavBeforeLogin from "../components/NavBeforeLogin";
 import UnderBar from "../components/UnderBar";
 import introduce1 from "../imgs/webTi_logo.png";

@@ -4,42 +4,52 @@ import React, {useState} from "react";
 
 // ModalCreateDL.js 에 들어가는 색상선택 컴포넌트.
 
-function RadioButton() {
+function RadioButton({parentRadioBtn}) {
     // blue, pink, orange, green
     // #6582BB, #BA6AA4, #C7705E, #8BBB65
     //const DLcolors = ["blue", "pink", "orange", "green"];
     const [DLcolor, setDLColor] = useState("blue");
 
+    const onDLColor = (e) => {
+        setDLColor(e.target.value)
+    }
+
+    parentRadioBtn(DLcolor);
+
     return (
             <label className='radioBtn'>
                 <input className='selectBtn'
-                    name='color'
+                    name='blue'
+                    value="blue"
                     type="radio"
-                    onChange= {() => setDLColor("blue")}
-                    checked={DLcolor === "blue"} />
+                    onChange= {onDLColor}
+                    checked={DLcolor === "blue"}/>
                 <span className='custom-radio'></span>
                 <div className='colorBar-blue' color={DLcolor}></div>
 
                 <input className='selectBtn'
-                    name='color'
+                    name='pink'
+                    value="pink"
                     type="radio"
-                    onChange= {() => setDLColor("pink")}
-                    checked={DLcolor === "pink"} />
+                    onChange= {onDLColor}
+                    checked={DLcolor === "pink"}/>
                 <span className='custom-radio'></span>
                 <div className='colorBar-pink' color={DLcolor}></div>
                 
                 <input className='selectBtn'
-                    name='color'
+                    name='orange'
+                    value="orange"
                     type="radio"
-                    onChange= {() => setDLColor("orange")}
+                    onChange= {onDLColor}
                     checked={DLcolor === "orange"} />
                 <span className='custom-radio'></span>
                 <div className='colorBar-orange' color={DLcolor}></div>
 
                 <input className='selectBtn'
-                    name='color'
+                    name='green'
+                    value="green"
                     type="radio"
-                    onChange= {() => setDLColor("green")}
+                    onChange= {onDLColor}
                     checked={DLcolor === "green"} />
                 <span className='custom-radio'></span>
                 <div className='colorBar-green' color={DLcolor}></div>

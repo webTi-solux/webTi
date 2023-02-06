@@ -22,7 +22,7 @@ function LoginUi() {
 
     const history = useNavigate();
     const onClickLogin = async () => {
-        const users = await axios.get('/member/' + inputId+"/").then((res) => {return res.data});
+        const users = await axios.get('/member/' + inputId + "/").then((res) => {return res.data});
         
         console.log(users)
     
@@ -36,7 +36,9 @@ function LoginUi() {
         else {
           sessionStorage.setItem('userNick', users.Nickname)
           sessionStorage.setItem('userId', users.userId)
-          history(`/`);
+          sessionStorage.setItem('userAdYear', users.Year)
+          sessionStorage.setItem('userPw', users.Password)
+          history(`/main`);
     
         }
                 

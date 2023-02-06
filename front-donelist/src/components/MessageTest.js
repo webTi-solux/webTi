@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import React, {Component} from 'react';
-import NavAfterLogin from "./NavAfterLogin";
+import NavAfterLogin from "./NavAfterLogin_blue";
 import UnderBar from "./UnderBar";
 import "../styles/AllAboutMsg.css";
 import styled from "styled-components";

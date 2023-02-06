@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import "../styles/AllAboutMsg.css";
-import ReceivedMsgItem from './ReceivedMsgItem';
+import ReceivedMsgItem from '../components/ReceivedMsgItem';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 

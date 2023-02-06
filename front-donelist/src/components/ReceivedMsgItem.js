@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import NavAfterLogin from './NavAfterLogin';
-import UnderBar from './UnderBar';
+import NavAfterLogin from './NavAfterLogin_blue';
+import UnderBar from '../components/UnderBar';
 import "../styles/AllAboutMsg.css";
 import styled from 'styled-components';
 

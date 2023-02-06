@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'BlackOpsOne';
+    src: url("../fonts/BlackOpsOne-Regular.ttf") format('truetype');
+}
+
 .b-mod-main {
     text-align: center;
     justify-content: center;
@@ -87,6 +92,7 @@
     background-color: #fff;
     padding-left: 220px;
     font-size: 20px;
+    font-family: "BlackOpsOne";
 }
 
 .b-mod-user-pwd {
@@ -98,6 +104,7 @@
     background-color: #fff;
     padding-left: 220px;
     font-size: 20px;
+    font-family: "BlackOpsOne";
 }
 
 .b-mod-button-Ui{

@@ -357,3 +357,10 @@ input:focus {
     font-size: 17px;
     cursor:pointer;
 }
+
+.modifydone {
+    font-size: 35px;
+    padding-top: 18px;
+    text-align: center;
+    color:white;
+}

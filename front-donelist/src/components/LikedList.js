@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import NavAfterLogin from "./NavAfterLogin";
-import UnderBar from "./UnderBar";
+import NavAfterLogin from "./NavAfterLogin_blue";
+import UnderBar from "../components/UnderBar";
 import { renderMatches, useLocation, useResolvedPath } from "react-router-dom";
 import "../styles/likedList.css";
 import { Link } from "react-router-dom";
