@@ -10,7 +10,7 @@ import axios from "axios";
 
 const Main = (props) => {
 let [adYear, setAdYear] = useState(2020); //가입년도를 숫자로 받는다고 가정
-let [nowYear, setNowYear] = useState(2024);
+let [nowYear, setNowYear] = useState(2023);
 
 // 던리스트 생성창 모달
 const [ModalHandle, setModalHandle] = React.useState(false);

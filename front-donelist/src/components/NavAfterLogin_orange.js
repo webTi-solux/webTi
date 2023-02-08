@@ -18,14 +18,13 @@ class NavAfterLogin extends Component {
         return (
             <div>
             <nav className="nav3">
-                <input className="search-box"
-                type="search"
-                placeholder="  해시태그 검색"></input>
+            <Link to="view-other-donelists"><button className="go-to-see-all"> {'>'} View other DoneLists
+                </button></Link>
                 <ul>
-                    <Link to="/main"><li><button className="topBar">홈</button></li></Link>
-                    <Link to="/mypage"><li><button className="topBar">마이페이지</button></li></Link>
-                    <Link to="/"><li><button className="topBar" onClick={toLogout}>로그아웃</button></li></Link>
-                    <Link to="/how-to-use"><li><button className="topBar">이용방법</button></li></Link>
+                    <Link to="/main"><li><button className="topBar">Home</button></li></Link>
+                    <Link to="/mypage"><li><button className="topBar">My Page</button></li></Link>
+                    <Link to="/"><li><button className="topBar" onClick={toLogout}>Logout</button></li></Link>
+                    <Link to="/how-to-use"><li><button className="topBar">About</button></li></Link>
                 </ul>
                 </nav>   
             </div>

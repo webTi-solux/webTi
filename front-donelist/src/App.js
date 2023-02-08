@@ -21,6 +21,7 @@ import ReceivedMsgs from './routes/ReceivedMsgTemplate';
 import MessageTest from './routes/MessageTest';
 import SendMsgs from './routes/SendMsgTemplate';
 import DonelistBar from './components/DonelistBar';
+import ShowAllDoneLists from './routes/ShowAllDoneLists';
 import axios from 'axios';
 import { useEffect } from 'react';
 
@@ -68,6 +69,7 @@ function App() {
         <Route path="/msgs-to-me-detail/:messageId" element={<MessageTest />}/>
         <Route path="/msgs-from-me" element={<SendMsgs />}/>
         {/* <Route path="/donelistbar" element={<DonelistBar />}/> */}
+        <Route path="/view-other-donelists" element={<ShowAllDoneLists/>}/>
   </Routes>
       </BrowserRouter>
     </div>

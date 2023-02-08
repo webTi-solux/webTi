@@ -15,6 +15,24 @@ background-color: #EAE9D5;
     cursor:pointer;
 }
 
+.go-to-see-all {
+    text-align: left;
+    position: relative;
+    float: left;
+    height: 27px;
+    width : 200px;
+    top: 7px;
+    left : 15px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: solid 1px white;
+    color: white;
+    font-family: "BlackOpsOne";
+    font-weight: lighter;
+    cursor: pointer;
+    text-align: center;
+}
+
 .search-box {
     text-align: left;
     position: relative;

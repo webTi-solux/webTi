@@ -16,18 +16,17 @@ class NavBeforeLogin extends Component {
         function howtoUse() {
             console.log("이용방법");
         }
-		
+
         return (
             <div>
             <nav className="nav1">
-                <input className="search-box"
-                type="search"
-                placeholder="  해시태그 검색"></input>
+                <Link to="view-other-donelists"><button className="go-to-see-all"> {'>'} View other DoneLists
+                </button></Link>
                 <ul>
-                    <li><button className="topBar" onClick={toHome}>홈</button></li>
-                    <Link to="/login-page"><li><button className="topBar" onClick={toLogin}>로그인</button></li></Link>
-                    <Link to="/join-page"><li><button className="topBar" onClick={toJoin}>회원가입</button></li></Link>
-                    <Link to="/how-to-use"><li><button className="topBar" onClick={howtoUse}>이용방법</button></li></Link>
+                    <li><button className="topBar" onClick={toHome}>Home</button></li>
+                    <Link to="/login-page"><li><button className="topBar" onClick={toLogin}>Login</button></li></Link>
+                    <Link to="/join-page"><li><button className="topBar" onClick={toJoin}>Join</button></li></Link>
+                    <Link to="/how-to-use"><li><button className="topBar" onClick={howtoUse}>About</button></li></Link>
                 </ul>
                 </nav>   
             </div>

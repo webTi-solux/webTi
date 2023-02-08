@@ -35,7 +35,6 @@ const MyPage = (props) => {
     })}, [])
     return (
         <div>
-
         <NavAfterLogin/>
         <div className="profile">
         <p className="user-picture"></p>

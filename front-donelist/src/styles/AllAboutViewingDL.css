@@ -1,0 +1,45 @@
+.last_view_area {
+    float: left;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 80px;
+    width: 350px;
+    height: 210px;
+    background-color:ivory;
+    border-radius: 20px;
+}
+
+.last_dl_image {
+    margin-top: 20px;
+    height:135px;
+    width: 300px;
+}
+
+.last_dl_nickName_area {
+    margin-top: 5px;
+}
+.last_dl_nickName1 {
+    font-size: 18px;
+    margin-top: 20px;
+    color:#065C94;
+    font-family: "BlackOpsOne";
+}
+
+.last_dl_nickName2 {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
+    color:#065C94;
+}
+
+.last_dl_startYear_area {
+    margin-top: 5px;
+}
+.last_dl_startYear1 {
+    font-family: "BlackOpsOne";
+    font-size: 13px;
+}
+
+.last_dl_startYear2 {
+    font-size : 13px;
+}

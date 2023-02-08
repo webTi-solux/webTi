@@ -5,26 +5,32 @@ import { renderMatches, useLocation, useResolvedPath } from "react-router-dom";
 import "../styles/likedList.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import donelist_D from "../imgs/donelist_D.png"
 
 const LikedList= ({doneId}) => {
-    //console.log(doneId.userId)
+    console.log(doneId)
 
     const [likedUserNick, setLikedUserNick] = useState()
+    const [title, setTitle] = useState()
 
     useEffect(()=> {
-        axios.get("/member/" + doneId.userId + '/').then((res) => {
 
-            let nickfilter = res.data.Nickname;
+        setLikedUserNick(doneId.userId.Nickname)
 
-            setLikedUserNick(nickfilter)
+        axios.get("/donelist/" + doneId._id + '/').then((res) => {
+            console.log(res.data)
+            let titlefilter = res.data.title;
+            setTitle(titlefilter)
     })}, [])
 
     // css 수정 -> '닉네임'의 '활동명' 앞에 D 로고 같은 거 넣으면 좋을 듯
         return (
             <div>
                 <div className="liked-list-items">
-                    <Link to={`/visit-detail/${doneId._id}`}><div className="liked-text">
-                        <p>{likedUserNick}의 "{doneId.title}"</p>
+                    <Link to={`/visit-detail/${doneId._id}`}>
+                        <div className="liked-text">
+                        <img src={donelist_D} alt="dl_D" className="img-DL_D"></img>
+                        <p className="liked-text-item">{likedUserNick}의 "{title}"</p>
                     </div></Link>
                 </div>
 

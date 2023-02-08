@@ -21,7 +21,7 @@ const DonelistBar = (props) => {
     const title = props.donelist.title;
     // 위에서부터 몇 번째 던리스트인지, y축 계산 위함. index 값 받아옴.
     const orderY = props.index;
-    const RIGHTAREA = 70;
+    const RIGHTAREA = 70 - 600;
     const TOPAREA = -530;
 
     console.log(props.donelist)
@@ -94,7 +94,18 @@ const CreateDLname = styled.span`
     margin-top: 50px;
     margin-left: 10px;
     color: ${color};
-    font-family: "BlackOpsOne";
+    @font-face {
+        font-family: 'BlackOpsOne';
+        src: url('../fonts/BlackOpsOne-Regular.ttf') format('truetype');
+        unicode-range:  U+0041-005A,U+0061-007A;
+    }
+
+    @font-face {
+        font-family: 'han';
+        src: url('../fonts/esamanru_Medium.ttf') format('truetype');
+        unicode-range: U+AC00-D7A3;
+    }
+    font-family: 'BlackOpsOne', 'han';
     font-size: 22px;
 `;
 

@@ -95,12 +95,14 @@ DM_list = DMViewset.as_view({
     'get': 'list',
     'post': 'create'
 })
+DM_detail = DMViewset.as_view({
+    'get': 'retrieve',      
+})
 
 
 class DMsendViewset(viewsets.ModelViewSet) :
     queryset = DM.objects.all()
     serializer_class = DMsendSerializer
-    lookup_field = "sendId"
     
 
 
@@ -108,14 +110,21 @@ DMsend_list = DMsendViewset.as_view({
     'get': 'list'
 })
 
+DMsend_detail = DMsendViewset.as_view({
+    'get': 'retrieve'
+})
+
 class DMreceiveViewset(viewsets.ModelViewSet):
     queryset = DM.objects.all()
     serializer_class = DMreceiveSerializer
-    lookup_field = "receiveId"
 
 DMreceive_list = DMreceiveViewset.as_view({
-        'get': 'list'
+    'get': 'list'
 
+})
+
+DMreceive_detail = DMsendViewset.as_view({
+    'get': 'retrieve'
 })
     
 
