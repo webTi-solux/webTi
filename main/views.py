@@ -123,7 +123,7 @@ DMreceive_list = DMreceiveViewset.as_view({
 
 })
 
-DMreceive_detail = DMsendViewset.as_view({
+DMreceive_detail = DMreceiveViewset.as_view({
     'get': 'retrieve'
 })
     
