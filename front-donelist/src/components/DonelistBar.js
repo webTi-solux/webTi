@@ -4,6 +4,7 @@ import ModalCreateDL from "./ModalCreateDL";
 import styled from "styled-components";
 import Main from "../routes/Main";
 import moment from 'moment';
+import { Link } from "react-router-dom";
 
 
 // 미해결 : 던리스트가 스크롤 움직이면 따라 움직이지 않고 뷰포트 위치에 그대로 있음.
@@ -69,7 +70,7 @@ const DonelistBar = (props) => {
 `;
 
     const CreateDLContainer2 = styled.div`
-    position: absolute;
+    position: relative;
     width: ${DLlength}px;
     height: 100px;
     margin-right: ${RightMargin}px;
@@ -112,7 +113,7 @@ const CreateDLDate = styled.span`
     return (
         <CreateDLContainer1>
             <CreateDLContainer2>
-                <CreateDL />
+                <Link to={`/visit-detail/${props.donelist._id}`}><CreateDL /></Link>
                 <CreateDLname>{title}</CreateDLname>
                 <CreateDLDate>{startYear-2000}.{Zero(startMonth)} - {endYear-2000}.{Zero(endMonth)}</CreateDLDate>
             </CreateDLContainer2>

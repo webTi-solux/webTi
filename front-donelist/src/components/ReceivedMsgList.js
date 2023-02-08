@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react';
+import React, {Component} from 'react';
 import "../styles/AllAboutMsg.css";
 import ReceivedMsgItem from '../components/ReceivedMsgItem';
 import styled from 'styled-components';
@@ -12,20 +12,11 @@ const MsgList = styled.ul`
 `;
 
 function ReceivedMsgList({ messages }) {
-
-    useEffect(() => {
-        return console.log(messages)
-    })
     return (
     <div className='received-msg-item'>
-        
         <MsgList >
-        {messages.slice(0).reverse().map((message) => (
-        <li><ReceivedMsgItem
-        message={message}
-        key={message._id}
-        /><hr className='received-msg-line'/><br/><br/></li>
-    ))}
+            <ReceivedMsgItem message={messages} /><hr className='received-msg-line'/><br/><br/>
+        
         </MsgList>
     </div> 
     );

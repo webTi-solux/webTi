@@ -19,7 +19,7 @@ function CalendarBar(props) {
                 <p className="monthCircle10"></p>
                 <p className="monthCircle11"></p>
                 </div>
-            <div className="year-line"></div>
+            <div class="year-line"></div>
         </div>
     )
 }

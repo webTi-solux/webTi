@@ -63,7 +63,7 @@ function ModalCreateDL({setModalOpen}) {
                 </div>
                 </div>
             </div>
-            {/* sessionStorge 에 있는, 이전에 저장된 값이 받아와져서 화면이 앞서 세션스토리지에 저장한 색깔로 뜸 */}
+
             <div className='cdlw-buttons'>
                 <Link to ={`/write-detail/${sessionStorage.DLColor}`}><button className='cdlw-add' 
                 onClick={onAdd}>Add</button></Link>

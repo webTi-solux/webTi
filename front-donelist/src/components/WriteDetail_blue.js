@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "../styles/WriteDetail.css"
 import Period from "../components/Period";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const WriteInfo_title = styled.div`
 float:left;
@@ -82,10 +83,10 @@ const WriteQ3_area = styled.textarea`
     resize: none;
 `;
 
-function WriteDetail_green() {
+function WriteDetail_blue() {
 
 
-
+    const history = useNavigate();
 
     const handleChangeState = (e) => {
         e.preventDefault();
@@ -112,7 +113,6 @@ function WriteDetail_green() {
         //     Major: majorTagActive,
         // }))
 
-            console.log(state);
 
 
         // writePost();
@@ -121,8 +121,11 @@ function WriteDetail_green() {
         try {
             await axios.post('/donelist/', state)
             .then((response) => {
-                console.log(response.status);
-                console.log(response.data);
+                sessionStorage.removeItem('DLColor')
+                sessionStorage.removeItem('Title')
+                sessionStorage.removeItem('finishDate')
+                sessionStorage.removeItem('startDate')
+                history('/main')
             })} catch(e) {
                 console.log(e);
             }
@@ -170,7 +173,7 @@ function WriteDetail_green() {
         <form>
             <div>
             <WriteInfo_title color="#6582BB">{sessionStorage.Title}</WriteInfo_title>
-            <Period  start={sessionStorage.startDate} finish={sessionStorage.finishDate} />
+            <Period  start={sessionStorage.startDate} finish={sessionStorage.finishDate}/>
             </div>
             <div>
             <WriteQ1_question color="#6582BB">WHAT IS ? </WriteQ1_question>
@@ -222,10 +225,10 @@ function WriteDetail_green() {
     })}
     </div>
     <div>
-        <button className="write-complete-blue" onClick={handleSubmit}>COMPLETE</button>
+        <button className="write-complete" onClick={handleSubmit}>COMPLETE</button>
     </div>
             </form>
     );
 }
 
-export default WriteDetail_green;
+export default WriteDetail_blue;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "../styles/fixedNav.css"
 import { Link } from 'react-router-dom';
 
+
 class NavAfterLogin extends Component {
 	render(){
         const toLogout = () => {
@@ -12,7 +13,6 @@ class NavAfterLogin extends Component {
               sessionStorage.removeItem('userAdYear')
 
               // App 으로 이동(새로고침)
-              
           }
 		
         return (

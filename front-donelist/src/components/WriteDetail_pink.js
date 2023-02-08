@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "../styles/WriteDetail.css"
 import Period from "../components/Period";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const WriteInfo_title = styled.div`
 float:left;
@@ -82,10 +83,10 @@ const WriteQ3_area = styled.textarea`
     resize: none;
 `;
 
-function WriteDetail_green() {
+function WriteDetail_pink() {
 
 
-
+    const history = useNavigate();
 
     const handleChangeState = (e) => {
         e.preventDefault();
@@ -121,8 +122,11 @@ function WriteDetail_green() {
         try {
             await axios.post('/donelist/', state)
             .then((response) => {
-                console.log(response.status);
-                console.log(response.data);
+                sessionStorage.removeItem('DLColor')
+                sessionStorage.removeItem('Title')
+                sessionStorage.removeItem('finishDate')
+                sessionStorage.removeItem('startDate')
+                history('/main')
             })} catch(e) {
                 console.log(e);
             }
@@ -228,4 +232,4 @@ function WriteDetail_green() {
     );
 }
 
-export default WriteDetail_green;
+export default WriteDetail_pink;

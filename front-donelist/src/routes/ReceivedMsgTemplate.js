@@ -9,60 +9,36 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 
 function ReceivedMsgTemplate() {
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = ('0' + (today.getMonth() + 1)).slice(-2);
-    let day = ('0' + today.getDate()).slice(-2);
-    let dateString = year + '-' + month  + '-' + day;
-    // 예시: 2023-02-07
+    var today = new Date();
 
-//test 용으로 post 하기
-    const postMsg = async () => {
-        const postMsgItem = {
-            sendId: 5678,
-            receivedId: 1234,
-            message: "배고프당",
-            time: dateString,
-        }
-        try {
-            await axios.post('/dm/', postMsgItem
-            ) .then((response) => {
-            console.log(response.status);
-            console.log(response.data);
-        })} catch(e) {
-            console.log(e);
-        }
-    }
+    var year = today.getFullYear();
+    var month = ('0' + (today.getMonth() + 1)).slice(-2);
+    var day = ('0' + today.getDate()).slice(-2);
+    
+    var dateString = year + '-' + month  + '-' + day;
 
-    let messages = []
-    // get 요청
-    const GetReceivedMsg = async () => {
-        const msg = await axios.get('/dm/').then((res) => {return res.data});
-        // console.log(msg[0].message) -> 이렇게 쓰는 거 먹힘...
-        // msg.map((item, idx) =>
-        // console.log("item", item, "idx", idx)
-        // )
-        messages = msg.map((item, idx) => 
-        ({ 
-            _id: msg[idx]._id,
-            sendId: msg[idx].sendId,
-            receiveId: msg[idx].receiveId,
-            message: msg[idx].message,
-            time: msg[idx].time,
-            doneId: msg[idx].doneId,    
-        }))
+    const [messages, setMessages] = useState([]);
 
-        // 여기선 값이 들어가있는데 함수 밖으로 나가면 없음..
-        //console.log(messages)
+    const getMsg = async () => {
+        const Msgs = await axios.get('dm/receive/').then((res) => {
+            return res.data
+        })
+
+        const Msg = Msgs.filter((item) => {
+            return item.receiveId === sessionStorage.userId
+        })
+
+        setMessages(Msg)
+
     }
 
     useEffect(() => {
-        GetReceivedMsg();
-        // 여긴 안 들어옴
-        console.log(messages)
-    })
+        getMsg();
+    }, [])
+
 
     return(
+        
         <div className='msg-template'>
             <NavAfterLogin/>
             <div className='msg-title'>받은 쪽지함</div>
@@ -74,7 +50,7 @@ function ReceivedMsgTemplate() {
                 <li className='msg-list-title4'>등록일</li>
             </ul>
             <div><hr className='msg-title-line'/></div>
-            <ReceivedMsgList messages={messages}/>
+            {messages.map((item) => <ReceivedMsgList messages={item} key={item._id}/>)}
             <UnderBar/>
         </div>
     );

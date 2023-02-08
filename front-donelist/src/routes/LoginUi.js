@@ -38,7 +38,7 @@ function LoginUi() {
           sessionStorage.setItem('userId', users.userId)
           sessionStorage.setItem('userAdYear', users.Year)
           sessionStorage.setItem('userPw', users.Password)
-          history(`/`);
+          history(`/main`);
     
         }
                 

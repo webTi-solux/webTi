@@ -4,6 +4,7 @@ import styled from "styled-components";
 import "../styles/WriteDetail.css"
 import Period from "../components/Period";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const WriteInfo_title = styled.div`
 float:left;
@@ -85,7 +86,7 @@ const WriteQ3_area = styled.textarea`
 function WriteDetail_green() {
 
 
-
+    const history = useNavigate()
 
     const handleChangeState = (e) => {
         e.preventDefault();
@@ -121,8 +122,11 @@ function WriteDetail_green() {
         try {
             await axios.post('/donelist/', state)
             .then((response) => {
-                console.log(response.status);
-                console.log(response.data);
+                sessionStorage.removeItem('DLColor')
+                sessionStorage.removeItem('Title')
+                sessionStorage.removeItem('finishDate')
+                sessionStorage.removeItem('startDate')
+                history('/main')
             })} catch(e) {
                 console.log(e);
             }
@@ -170,7 +174,7 @@ function WriteDetail_green() {
         <form>
             <div>
             <WriteInfo_title color="#8BBB65">{sessionStorage.Title}</WriteInfo_title>
-            <Period start={sessionStorage.startDate} finish={sessionStorage.finishDate} />
+            <Period start={sessionStorage.startDate} finish={sessionStorage.finishDate}/>
             </div>
             <div>
             <WriteQ1_question color="#8BBB65">WHAT IS ? </WriteQ1_question>

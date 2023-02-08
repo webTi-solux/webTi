@@ -141,7 +141,7 @@ const Visit_green = ({ donelist }) => {
   return (
     <div>
       <div>
-        <VisitInfo_title>Programming Club "SOLUX"</VisitInfo_title>
+        <VisitInfo_title>{donelist.title}</VisitInfo_title>
         <div>
           <Period start={donelist.startDate} finish={donelist.finishDate} />
         </div>
