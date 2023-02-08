@@ -33,6 +33,14 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     padding:0;
     background-color : #EAE9D5;
+    @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
   }
 `;
 

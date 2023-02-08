@@ -3,6 +3,16 @@
     src: url("../fonts/BlackOpsOne-Regular.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'han-VeryBold';
+    src: url("../fonts/NotoSansKR-Black.otf") format('truetype');
+}
+
 body {
     background-color: #EAE9D5;
     }
@@ -60,8 +70,8 @@ body {
         outline: none;
         background-color: #fff;
         padding-left: 220px;
-        font-size: 20px;
-        font-family: "BlackOpsOne";
+        font-size: 18px;
+        font-family: "han-VeryBold";
     }
 
 
@@ -176,10 +186,11 @@ body {
         width: 90px;
         position: absolute;
         padding: 20px 0 0 25px;   
-        font-size: 20px;
+        font-size: 19px;
         margin-top: 3px;
-        font-family: "BlackOpsOne";
+        font-family: "han-VeryBold";
         color: #065C94;
+        margin-left: 5px;
     }
 
     .join-input-ad-year {
