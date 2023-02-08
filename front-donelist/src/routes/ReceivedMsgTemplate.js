@@ -34,7 +34,7 @@ function ReceivedMsgTemplate() {
 
     useEffect(() => {
         getMsg();
-    }, [])
+    }, []) 
 
 
     return(
