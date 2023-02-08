@@ -3,30 +3,27 @@ import React, { Component } from "react";
 import ModalCreateDL from "./ModalCreateDL";
 import styled from "styled-components";
 import Main from "../routes/Main";
+import moment from 'moment';
+
 
 // 미해결 : 던리스트가 스크롤 움직이면 따라 움직이지 않고 뷰포트 위치에 그대로 있음.
 
 const DonelistBar = (props) => {
 
-    console.log(props)
+
+    const startYear = parseInt(moment(props.donelist.startDate).format('YYYY'))
+    const startMonth = parseInt(moment(props.donelist.startDate).format('MM'))
+    const endYear = parseInt(moment(props.donelist.finishDate).format('YYYY'))
+    const endMonth = parseInt(moment(props.donelist.finishDate).format('MM'))
 
     //던리스트 시작 날짜, 끝난 날짜
-    // props = {Acitivity, Colorcode, Episode, Major, Whatdid, Whatis, finishDate, startDate, title, userId, _id}
-    const title = props.title;
-
-    const startDate = props.startDate;
-    const finishDate = props.finishDate;
-
-    const startYear = Number(startDate.substr(0, 4))
-    const startMonth = Number(startDate.substr(5, 2))
-    const endYear = Number(finishDate.substr(0, 4))
-    const endMonth = Number(finishDate.substr(5, 2))
-
+    const title = props.donelist.title;
     // 위에서부터 몇 번째 던리스트인지, y축 계산 위함. index 값 받아옴.
-    const orderY = props._id;
-    
+    const orderY = props.index;
     const RIGHTAREA = 70;
     const TOPAREA = -530;
+
+    console.log(props.donelist)
 
     // 던리스트 길이 계산 함수 
     const CalDLlength = () => {
@@ -62,12 +59,9 @@ const DonelistBar = (props) => {
     const DLlength = CalDLlength();
     const RightMargin = CalRightMargin();
     const TopMargin = CalTopMargin();
-    const color = ColorCode(props.Colorcode);
+    const color = ColorCode(props.donelist.Colorcode);
 
-    // 값 다 제대로 들어가는데 왜 렌더링이 안되는데요.
-    //console.log(DLlength, RightMargin, TopMargin, color);
-    // console.log(RightMargin, TopMargin)
-    
+
     const CreateDLContainer1 = styled.div`
     position: relative;
     display: flex;
@@ -123,7 +117,7 @@ const CreateDLDate = styled.span`
                 <CreateDLDate>{startYear-2000}.{Zero(startMonth)} - {endYear-2000}.{Zero(endMonth)}</CreateDLDate>
             </CreateDLContainer2>
         </CreateDLContainer1>
-    )
+    );
 }
 
 export default DonelistBar;

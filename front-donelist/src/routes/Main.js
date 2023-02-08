@@ -20,9 +20,8 @@ const showModal = () => {
     setModalHandle(true);
 };
 
-useEffect(() => {
-    GetDonelist();
-}, [])
+const [Bar, getBar] = useState([]);
+
 
 
 let {userId} = useParams();
@@ -32,14 +31,19 @@ let {userId} = useParams();
 const GetDonelist = async () => {
     const DL = await axios.get('/donelist/').then((res) => {return res.data});
     //console.log(DL);
-    const userId = sessionStorage.getItem("userId")
-    
-    DL.slice(0).map((dl) => {
-        if (userId === dl.userId) {
 
-            DonelistBar(dl)
-        }})
+    let DLfilter = DL.filter((item) => {
+        return item.userId === sessionStorage.userId
+    })
+
+    console.log(DLfilter)
+    getBar(DLfilter);
+
 }
+
+useEffect(() => {
+    GetDonelist();
+}, [])
 
 // 임시데이터, DB에 저장된 사용자의 DL 정보 모두 가져와 돌려야 함, Y 값 어떻게할지 생각해봐야함.
     // const [donelist, setDonelist] = useState({
@@ -59,7 +63,7 @@ const GetDonelist = async () => {
         //     ...donelist,
         //     index: counter
         // }
-        //console.log(donelist);
+        console.log(donelist);
         DonelistBar(donelist)
         //setCounter((prev)=>(prev+1) )
     }
@@ -80,6 +84,7 @@ return (
             })}
 
         </div>
+        {Bar.map((bar, index) => <DonelistBar donelist={bar} index={index}/> )}
         
         <div className="create-DL-btn-container">
         <button 
