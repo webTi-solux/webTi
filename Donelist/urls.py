@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from main.views import member_list, member_detail, donelist_detail, donelist_list, donecontent_list,like_list, like_detail, likecontent_list, comment_list, comment_detail, DM_list, DMsend_list, DMreceive_list
+from main.views import member_list, member_detail, donelist_detail, donelist_list, donecontent_list,like_list, like_detail, likecontent_list, comment_list, comment_detail, DM_list, DMsend_list, DMreceive_list, DM_detail, DMsend_detail, DMreceive_detail
 
 
 
@@ -34,8 +34,11 @@ urlpatterns = [
     path('comment/', comment_list),
     path('comment/<pk>/', comment_detail),
     path('dm/', DM_list),
-    path('dm/send/<sendId>/', DMsend_list),
-    path('dm/receive/<receiveId>/', DMreceive_list)
+    path('dm/send/', DMsend_list),
+    path('dm/send/<pk>/', DMsend_detail),
+    path('dm/receive/', DMreceive_list),
+    path('dm/receive/<pk>/', DMreceive_detail)
+
 
 
 ]
