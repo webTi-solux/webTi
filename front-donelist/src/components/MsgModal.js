@@ -29,6 +29,7 @@ function MsgModal(props) {
         /*navigate('/received-msg-page-detail', {state : { messageTitle : msgState.msgTitle, 
         messageContent: msgState.msgContent },
         });*/
+        closeModal()
     }
 
     return (

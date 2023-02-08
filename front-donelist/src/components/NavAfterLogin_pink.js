@@ -18,7 +18,7 @@ class NavAfterLogin extends Component {
         return (
             <div>
             <nav className="nav2">
-            <Link to="view-other-donelists"><button className="go-to-see-all"> {'>'} View other DoneLists
+            <Link to="/view-other-donelists"><button className="go-to-see-all"> {'>'} View other DoneLists
                 </button></Link>
                 <ul>
                     <Link to="/main"><li><button className="topBar">Home</button></li></Link>
