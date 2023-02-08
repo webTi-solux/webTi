@@ -18,11 +18,11 @@ import WriteDetail from './routes/WriteDetail';
 import VisitDetail from './routes/VisitDetail';
 import YearMonthSelectBox from './components/YearMonthSelectBox_start';
 import ReceivedMsgs from './routes/ReceivedMsgTemplate';
-import MessageTest from './routes/MessageTest';
 import SendMsgs from './routes/SendMsgTemplate';
 import DonelistBar from './components/DonelistBar';
-import axios from 'axios';
 import { useEffect } from 'react';
+import Message from './routes/Message_receive';
+import Messagesend from './routes/Message_send.js'
 
 
 const GlobalStyles = createGlobalStyle`
@@ -64,8 +64,9 @@ function App() {
         <Route path="/cdlw-page" element={<ModalCreateDL />}/>
         <Route path="/selectbox-page" element={<YearMonthSelectBox />}/>
         <Route path="/msgs-to-me" element={<ReceivedMsgs />}/>
-        <Route path="/msgs-to-me-detail/:messageId" element={<MessageTest />}/>
+        <Route path="/msgs-to-me-detail/:msgid" element={<Message />}/>
         <Route path="/msgs-from-me" element={<SendMsgs />}/>
+        <Route path="/msgs-from-me-detail/:msgid" element={<Messagesend />}/>
         <Route path="/donelistbar" element={<DonelistBar />}/>
   </Routes>
       </BrowserRouter>

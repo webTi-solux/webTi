@@ -119,8 +119,8 @@
     height: 50px;
     background-color: transparent;
     border:none;
-    margin-left: 310px;
-    margin-top: 173px;
+    margin-left: 380px;
+    margin-top: 170px;
     font-size: 22px;
     color: #065C94;
     font-weight: bold;
@@ -137,7 +137,7 @@
 
 .msgDetailContent-area {
     position: absolute;
-    width: 950px;
+    width: 920px;
     height: 130px;
     background-color: transparent;
     border: solid #065C94;
@@ -145,8 +145,10 @@
     border-radius: 5px;
     margin-left: 220px;
     margin-top: 320px;
+    padding: 15px 15px 15px 15px;
     font-size: 18px;
     color: #065C94;
+    border-radius: 25px;
 }
 
 .re-sending-btn {
@@ -160,4 +162,27 @@
     background-color: #065C94;
     color:white;
     font-family: "BlackOpsOne";
+}
+
+.msgsender {
+    position: absolute;
+    margin-top: 215px;
+    margin-left: 220px;
+    color: #065C94;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.msgsenderdetail {
+    position: absolute;
+    border-radius: 10px;
+    width: 600px;
+    height: 50px;
+    background-color: transparent;
+    border:none;
+    margin-left: 380px;
+    margin-top: 215px;
+    font-size: 22px;
+    color: #065C94;
+    font-weight: bold;
 }
