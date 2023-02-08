@@ -1,5 +1,5 @@
 import '../styles/RadioButton.css';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 
 // ModalCreateDL.js 에 들어가는 색상선택 컴포넌트.
@@ -12,9 +12,13 @@ function RadioButton() {
 
     const onDLColor = (e) => {
         setDLColor(e.target.value)
+        
         sessionStorage.setItem("DLColor", e.target.value)
     }
 
+    useEffect(() => {
+        sessionStorage.setItem("DLColor", DLcolor)
+    }, [])
     return (
             <label className='radioBtn'>
                 <input className='selectBtn'

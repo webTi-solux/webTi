@@ -121,8 +121,10 @@ function WriteDetail_green() {
         try {
             await axios.post('/donelist/', state)
             .then((response) => {
-                console.log(response.status);
-                console.log(response.data);
+                sessionStorage.removeItem('DLColor')
+                sessionStorage.removeItem('Title')
+                sessionStorage.removeItem('finishDate')
+                sessionStorage.removeItem('startDate')
             })} catch(e) {
                 console.log(e);
             }

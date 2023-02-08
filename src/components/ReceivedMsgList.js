@@ -15,12 +15,8 @@ function ReceivedMsgList({ messages }) {
     return (
     <div className='received-msg-item'>
         <MsgList >
-        {messages.slice(0).reverse().map((message) => (
-        <li><ReceivedMsgItem
-        message={message}
-        key={message.id}
-        /><hr className='received-msg-line'/><br/><br/></li>
-    ))}
+            <ReceivedMsgItem message={messages} /><hr className='received-msg-line'/><br/><br/>
+        
         </MsgList>
     </div> 
     );
