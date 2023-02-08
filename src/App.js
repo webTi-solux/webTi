@@ -18,7 +18,7 @@ import WriteDetail from './routes/WriteDetail';
 import VisitDetail from './routes/VisitDetail';
 import YearMonthSelectBox from './components/YearMonthSelectBox_start';
 import ReceivedMsgs from './routes/ReceivedMsgTemplate';
-import MessageTest from './components/MessageTest';
+import MessageTest from './routes/MessageTest';
 import SendMsgs from './routes/SendMsgTemplate';
 import DonelistBar from './components/DonelistBar';
 import axios from 'axios';
@@ -52,7 +52,6 @@ function App() {
         <Route path="/mypage/" element={
               <MyPage />
               }/>
-              {/* user 아이디로 구별 해야함 */}
         <Route path="/how-to-use" element={<HowtoUse />}/>
         <Route path="/login-page" element={<LoginUi />}/>
         <Route path="/join-page" element={<JoinPage />}/>
@@ -65,7 +64,7 @@ function App() {
         <Route path="/cdlw-page" element={<ModalCreateDL />}/>
         <Route path="/selectbox-page" element={<YearMonthSelectBox />}/>
         <Route path="/msgs-to-me" element={<ReceivedMsgs />}/>
-        <Route path="/msgs-to-me-detail" element={<MessageTest />}/>
+        <Route path="/msgs-to-me-detail/:messageId" element={<MessageTest />}/>
         <Route path="/msgs-from-me" element={<SendMsgs />}/>
         <Route path="/donelistbar" element={<DonelistBar />}/>
   </Routes>

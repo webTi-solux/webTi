@@ -82,7 +82,7 @@ const WriteQ3_area = styled.textarea`
     resize: none;
 `;
 
-function WriteDetail_green() {
+function WriteDetail_pink() {
 
 
 
@@ -121,8 +121,10 @@ function WriteDetail_green() {
         try {
             await axios.post('/donelist/', state)
             .then((response) => {
-                console.log(response.status);
-                console.log(response.data);
+                sessionStorage.removeItem('DLColor')
+                sessionStorage.removeItem('Title')
+                sessionStorage.removeItem('finishDate')
+                sessionStorage.removeItem('startDate')
             })} catch(e) {
                 console.log(e);
             }
@@ -190,14 +192,14 @@ function WriteDetail_green() {
             value={state.Episode} onChange={handleChangeState}
             maxLength={350} placeholder="이 활동이 자신에게 특히 어떤 도움을 주었는지, 기억에 남는 부분은 무엇이었는지 등 자유롭게 소개해주세요"></WriteQ3_area>
             </div>
-            <div className="WriteGreen-letsHashtag" >Hashtag</div>
-            <div className="WriteGreen-hashtag-activity">
+            <div className="WritePink-letsHashtag" >Hashtag</div>
+            <div className="WritePink-hashtag-activity">
         {activityTag.map((item1,idx1) => {
         return (
             <>
             <button key={idx1}
             value={item1}
-            className={"WriteGreen-hashtagBtn-act" + (item1 == activityTagActive ? "-active" : "")}
+            className={"WritePink-hashtagBtn-act" + (item1 == activityTagActive ? "-active" : "")}
             onClick={toggleActive1}
             >
             {item1}
@@ -206,13 +208,13 @@ function WriteDetail_green() {
         );
     })}
     </div>
-    <div className="WriteGreen-hashtag-major">
+    <div className="WritePink-hashtag-major">
     {majorTag.map((item2, idx2) => {
         return (
             <>
             <button key={idx2} 
             value={item2}
-            className={"WriteGreen-hashtagBtn-major" + (item2 == majorTagActive ? "-active" : "")}
+            className={"WritePink-hashtagBtn-major" + (item2 == majorTagActive ? "-active" : "")}
             onClick={toggleActive2}
             >
             {item2}
@@ -222,10 +224,10 @@ function WriteDetail_green() {
     })}
     </div>
     <div>
-        <button className="write-complete-green" onClick={handleSubmit}>COMPLETE</button>
+        <button className="write-complete-pink" onClick={handleSubmit}>COMPLETE</button>
     </div>
             </form>
     );
 }
 
-export default WriteDetail_green;
+export default WriteDetail_pink;

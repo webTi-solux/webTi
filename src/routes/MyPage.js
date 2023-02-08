@@ -27,7 +27,6 @@ const MyPage = (props) => {
 
             let likefilter = res.data.filter(x=> {
                 
-    console.log(x.doneId._id)
 
                 return x.userId === sessionStorage.userId
             })
@@ -46,8 +45,8 @@ const MyPage = (props) => {
         </div>
         <img src={dl_mini} alt="dl_mini" className="img-DL"></img>
         <Link to="/main"><button className="directToDL">나의 던리스트 바로가기</button></Link>
-        <button className="mypage-receivedMsg">받은 쪽지함</button>
-        <button className="sendMsg">보낸 쪽지함</button>
+        <Link to="/msgs-to-me"><button className="mypage-receivedMsg">받은 쪽지함</button></Link>
+        <Link to="/msgs-from-me"><button className="sendMsg">보낸 쪽지함</button></Link>
         <div>
         </div>
         <div className="container_myLiked"> 

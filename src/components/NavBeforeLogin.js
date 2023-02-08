@@ -25,8 +25,8 @@ class NavBeforeLogin extends Component {
                 placeholder="  해시태그 검색"></input>
                 <ul>
                     <li><button className="topBar" onClick={toHome}>홈</button></li>
-                    <Link to="/login-page"><li><button className="topBar" onClick={toLogin}>로그인</button></li>
-                    <li><button className="topBar" onClick={toJoin}>회원가입</button></li></Link>
+                    <Link to="/login-page"><li><button className="topBar" onClick={toLogin}>로그인</button></li></Link>
+                    <Link to="/join-page"><li><button className="topBar" onClick={toJoin}>회원가입</button></li></Link>
                     <Link to="/how-to-use"><li><button className="topBar" onClick={howtoUse}>이용방법</button></li></Link>
                 </ul>
                 </nav>   

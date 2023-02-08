@@ -42,14 +42,14 @@ function VisitDetail() {
         case "orange" :
             return (
                 <div>
-                    <NavAfterLogin_pink/>
+                    <NavAfterLogin_orange/>
                     <Visit_orange donelist={donelist}/>
                 </div>
                 );
         case "pink":
             return (
                 <div>
-                    <NavAfterLogin_orange/>
+                    <NavAfterLogin_pink/>
                     <Visit_pink donelist={donelist}/>
                 </div>
                 );
