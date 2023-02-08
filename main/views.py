@@ -34,6 +34,8 @@ donelist_list = DoneListViewset.as_view({
 donelist_detail = DoneListViewset.as_view({
     'get': 'retrieve',      #싱글 object
     'patch': 'partial_update',
+    'delete': 'destroy'
+
 })
 
 class DoneContentViewset(viewsets.ModelViewSet) :
