@@ -22,8 +22,9 @@ import MessageTest from './routes/MessageTest';
 import SendMsgs from './routes/SendMsgTemplate';
 import DonelistBar from './components/DonelistBar';
 import ShowAllDoneLists from './routes/ShowAllDoneLists';
-import axios from 'axios';
 import { useEffect } from 'react';
+import Message from './routes/Message_receive';
+import Messagesend from './routes/Message_send.js'
 
 
 const GlobalStyles = createGlobalStyle`
@@ -60,14 +61,15 @@ function App() {
         <Route path="/before-modify-my-info-page" element={<BeforeModifyMyInfo />}/>
         {/*<Route path="/liked-list" element={<LikedList/>}/>*/}
         <Route path="/main" element={<Main />}/>
-        <Route path="/main/:userId" element={<Main/>}/>
+        {/* <Route path="/main/:userId" element={<Main/>}/> */}
         <Route path="/write-detail/:DLcolor" element={<WriteDetail/>}/>
         <Route path="/visit-detail/:doneId" element={<VisitDetail/>}/>
         {/* <Route path="/cdlw-page" element={<ModalCreateDL />}/> */}
         {/* <Route path="/selectbox-page" element={<YearMonthSelectBox />}/> */}
         <Route path="/msgs-to-me" element={<ReceivedMsgs />}/>
-        <Route path="/msgs-to-me-detail/:messageId" element={<MessageTest />}/>
+        <Route path="/msgs-to-me-detail/:msgid" element={<Message />}/>
         <Route path="/msgs-from-me" element={<SendMsgs />}/>
+        <Route path="/msgs-from-me-detail/:msgid" element={<Messagesend />}/>
         {/* <Route path="/donelistbar" element={<DonelistBar />}/> */}
         <Route path="/view-other-donelists" element={<ShowAllDoneLists/>}/>
   </Routes>
