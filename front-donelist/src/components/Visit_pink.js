@@ -130,7 +130,6 @@ const Visit_Btn_Area = styled.div`
 
 const Visit_pink = ({ donelist }) => {
   const [popup, setPopup] = useState(false);
-  console.log("visit pink");
 
   const seeQ1 = donelist.Whatis;
   const seeQ2 = donelist.Whatdid;
@@ -172,10 +171,10 @@ const Visit_pink = ({ donelist }) => {
                 </button>
                 <div className="sendingMsg">쪽지</div>
               </div>
-              <Comment />
+              <Comment/>
               {popup && (
                 <WriteMessage
-                  closeModal={() => setPopup(!popup)}
+                  closeModal={() => setPopup(!popup)} donetitle={donelist.title} doneId={donelist._id} receiveId={donelist.userId}
                 ></WriteMessage>
               )}
             </Visit_Btn_Area>

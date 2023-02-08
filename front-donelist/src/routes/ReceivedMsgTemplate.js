@@ -50,7 +50,9 @@ function ReceivedMsgTemplate() {
                 <li className='msg-list-title4'>등록일</li>
             </ul>
             <div><hr className='msg-title-line'/></div>
-            {messages.map((item) => <ReceivedMsgList messages={item} key={item._id}/>)}
+            <div  className="received-msg-item-div">
+            {messages.map((item, index) => <ReceivedMsgList messages={item} index={index} key={item._id}/>)}
+            </div>
             <UnderBar/>
         </div>
     );

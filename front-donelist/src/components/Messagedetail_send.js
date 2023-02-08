@@ -5,7 +5,6 @@ import NavAfterLogin from "./NavAfterLogin_blue";
 import UnderBar from "./UnderBar";
 import "../styles/AllAboutMsg.css";
 import styled from "styled-components";
-import axios from "axios";
 
 
 function Messagedetail_send({message}) {
@@ -16,7 +15,7 @@ function Messagedetail_send({message}) {
 
     return (
         <div>
-        <div className="msg-title">받은 쪽지함 {'>'} 쪽지 열람</div>
+        <div className="msg-title">보낸 쪽지함 {'>'} 쪽지 열람</div>
         <hr className="msg-line"/>
         <div className="msgDetailTitle">제목</div>
         <div className="msgDetailTitle-area">

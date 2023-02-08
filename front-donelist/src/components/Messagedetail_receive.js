@@ -8,27 +8,12 @@ import styled from "styled-components";
 import axios from "axios";
 
 
-function Messagedetail({msgid}) {
+function Messagedetail({message}) {
     /*const location = useLocation();
     const messageDetail_title = location.state.messageTitle;
     const messageDetail_content = location.state.messageContent;*/
     
-    const [msg, getMsg] = useState([]);
 
-    const getMsgs = async () => {
-        const Msgs = await axios.get('/dm/receive/' + msgid +'/').then((res) => {
-            return res.data
-        })
-        
-        getMsg(Msgs)
-
-
-    }
-
-    useEffect(() => {
-        getMsgs();
-        console.log(msg)
-    }, [])
 
     return (
         <div>
@@ -36,17 +21,17 @@ function Messagedetail({msgid}) {
         <hr className="msg-line"/>
         <div className="msgDetailTitle">제목</div>
         <div className="msgDetailTitle-area">
-            {msg.doneId.title}
+            {message.doneId.title}
         </div>
         <div className="msgsender">
             보낸 사람
         </div>
         <div className="msgsenderdetail">
-            {msg.sendId.Nickname}
+            {message.sendId.Nickname}
         </div>
         <div className="msgDetailContent">내용</div>
         <div className="msgDetailContent-area">
-           {msg.message}
+           {message.message}
         </div>
         <div>
             <button className="re-sending-btn">답장 보내기</button>

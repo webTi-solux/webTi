@@ -7,6 +7,7 @@ function Comment() {
     const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
     const onChange = (event) => setComment(event.target.value);
+
     const onSubmit = (event) => {
         event.preventDefault();
         if(comment === "") {
@@ -23,7 +24,13 @@ function Comment() {
             <button className="send-cmt-btn">ENTER</button>
             </form>
             <ul className="display-comments">
-            {comments.map((item, index) => (<li className="cmtLi" key={index}>{item}</li>))}
+            {comments.map((item, index) => (<li className="cmtLi" key={index}>
+                <p className="commentNick">{sessionStorage.userNick}</p>
+                <p className="commentitem">{item}</p>
+                <hr/>
+
+                </li>))}
+
             </ul>
         </div>
     );

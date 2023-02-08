@@ -51,6 +51,19 @@ border:none;
 
 }
 
+.commentNick {
+    position: relative;
+    top: 10px;
+    margin-top: 15px;
+}
+
+.commentitem {
+    position: relative;
+    top: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+}
+
 .send-cmt-btn {
 position: absolute;
 width: 60px;
