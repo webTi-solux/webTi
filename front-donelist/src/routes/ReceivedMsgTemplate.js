@@ -45,12 +45,14 @@ function ReceivedMsgTemplate() {
             <div><hr className="msg-line"/></div>
             <ul className='msg-list-titles'>
                 <li className='msg-list-title1'>No.</li>
-                <li className='msg-list-title2'>제목</li>
+                <li className='msg-list-title2'>쪽지를 받은 Donelist</li>
                 <li className='msg-list-title3'>보낸 이</li>
                 <li className='msg-list-title4'>등록일</li>
             </ul>
             <div><hr className='msg-title-line'/></div>
-            {messages.map((item) => <ReceivedMsgList messages={item} key={item._id}/>)}
+            <div  className="received-msg-item-div">
+            {messages.slice(0).reverse().map((item, index) => <ReceivedMsgList messages={item} len={messages.length} index={index} key={item._id}/>)}
+            </div>
             <UnderBar/>
         </div>
     );

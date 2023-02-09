@@ -25,6 +25,7 @@ import ShowAllDoneLists from './routes/ShowAllDoneLists';
 import { useEffect } from 'react';
 import Message from './routes/Message_receive';
 import Messagesend from './routes/Message_send.js'
+import OtherMain from './components/OtherMain.js'
 
 
 const GlobalStyles = createGlobalStyle`
@@ -80,6 +81,7 @@ function App() {
         <Route path="/msgs-from-me-detail/:msgid" element={<Messagesend />}/>
         {/* <Route path="/donelistbar" element={<DonelistBar />}/> */}
         <Route path="/view-other-donelists" element={<ShowAllDoneLists/>}/>
+        <Route path="/other-main" element={<OtherMain/>}/>
   </Routes>
       </BrowserRouter>
     </div>

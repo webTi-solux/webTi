@@ -35,6 +35,7 @@ function SendMsgTemplate() {
 
     useEffect(() => {
         getMsg();
+        console.log(messages)
     }, [])
 
 
@@ -42,16 +43,19 @@ function SendMsgTemplate() {
         
         <div className='msg-template'>
             <NavAfterLogin/>
-            <div className='msg-title'>받은 쪽지함</div>
+            <div className='msg-title'>보낸 쪽지함</div>
             <div><hr className="msg-line"/></div>
             <ul className='msg-list-titles'>
                 <li className='msg-list-title1'>No.</li>
-                <li className='msg-list-title2'>제목</li>
-                <li className='msg-list-title3'>보낸 이</li>
+                <li className='msg-list-title2'>쪽지한 Donelist</li>
+                <li className='msg-list-title3'>받은 이</li>
                 <li className='msg-list-title4'>등록일</li>
             </ul>
             <div><hr className='msg-title-line'/></div>
-            {messages.map((item) => <SendedMsgList messages={item} key={item._id}/>)}
+            <div  className="received-msg-item-div">
+            {messages.slice(0).reverse().map((item, index) => <SendedMsgList messages={item} len={messages.length} index={index} key={item._id}/>)}
+
+            </div>
             <UnderBar/>
         </div>
     );

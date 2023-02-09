@@ -4,32 +4,32 @@ import Modal from 'react-modal';
 import styled from "styled-components";
 import "../styles/MsgModal.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function MsgModal(props) {
+    
+    const [msg, setMsg] = useState(
+        {
+            sendId: sessionStorage.userId,
+            receiveId: props.receiveId,
+            doneId: props.doneId,
+            message: "",
+        }
+    )
     function closeModal() {
         props.closeModal();
     }
-    const [msgState, setMsgState] = useState({
-        msgTitle:"",
-        msgContent:"",
-        }
-    );
     const navigate = useNavigate();
     const handleChangeMsgState = (e) => {
         e.preventDefault();
-        setMsgState({
-            ...msgState,
+        setMsg({
+            ...msg,
             [e.target.name]: e.target.value,
         });
     }
-
-    const handleMsgSubmit =(e) => {
+    const handleMsgSubmit = async(e) => {
         e.preventDefault();
-        //console.log(msgState);
-        /*navigate('/received-msg-page-detail', {state : { messageTitle : msgState.msgTitle, 
-        messageContent: msgState.msgContent },
-        });*/
-        closeModal()
+        await axios.post('/dm/', msg).then((res) => closeModal())
     }
 
     return (
@@ -39,13 +39,13 @@ function MsgModal(props) {
             ✖</button>
             <form>
             <div className="msgmodal-title">제목</div>
-            <input className="msgmodal-title-txtarea" 
-            name="msgTitle" value={msgState.msgTitle}
-            onChange={handleChangeMsgState}></input>
+            <div className="msgmodal-titledetail">
+                {props.donetitle}
+            </div>
 
             <div className="msgmodal-contents">내용</div>
             <textarea className="msgmodal-contents-txtarea" 
-            name="msgContent" value={msgState.msgContent} 
+            name="message" value={msg.message} 
             onChange={handleChangeMsgState}></textarea>
             <div>
         <button className="msgmodal-sendBtn" type="submit" onClick={handleMsgSubmit}>쪽지 보내기</button>

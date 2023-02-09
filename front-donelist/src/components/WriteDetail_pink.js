@@ -41,6 +41,11 @@ border-radius: 10px;
     margin-left: 185px;
     margin-top: 65px;
     resize: none;
+    @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const WriteQ2_question = styled.div`
@@ -61,6 +66,11 @@ border-width: 3px;
 margin-left: 185px;
 margin-top: 10px;
 resize: none;
+@font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const WriteQ3_question = styled.div`
@@ -81,6 +91,11 @@ const WriteQ3_area = styled.textarea`
     margin-left: 185px;
     margin-top: 10px;
     resize: none;
+    @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 function WriteDetail_pink() {

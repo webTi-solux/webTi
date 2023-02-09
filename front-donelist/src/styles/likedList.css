@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'han-Medium';
+    src: url("../fonts/NotoSansKR-Medium.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Alike';
+    src: url("../fonts/AlikeAngular-Regular.ttf") format('truetype');
+}
+
+
 .list-area {
     width: 420px;
     height:500px;
@@ -36,7 +57,21 @@
     border-color: #B5B5B5;
 }
 
-.liked-text-item {
+.liked-text-item-nick {
+    position: absolute;
     margin-left: 40px;
-    margin-top: 11px;
+    margin-top: 10px;
+    font-family: "han-Medium";
+}
+
+.liked-text-item-title {
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 10px;
+    font-family: "Alike";
+    font-weight: bold;
+}
+
+.liked-list-introduce {
+    font-family: "han-Regular";
 }

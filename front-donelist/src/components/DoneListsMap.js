@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import DoneListsItem from '../components/DoneListsItem';
 
 function DoneListsMap({otherDLsData}) {
+
     return (
         <div>
             <ul>

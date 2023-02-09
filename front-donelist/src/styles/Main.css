@@ -7,19 +7,38 @@
     padding: 0px;
 }
 
+.downBtn {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    background-color: #065C94;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    font-weight: lighter;
+    font-family: "BlackOpsOne";
+}
 
 ul li {
     list-style-type: none;
     float: left; 
 }
 
+.DL-down {
+    background-color: #EAE9D5;
+}
 
 .DL-sub-container {
+    width: 100%;
     position: relative;
     padding-right: 0px;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
+    overflow: overlay;
     scrollbar-color: #EAE9D5;
 }
 

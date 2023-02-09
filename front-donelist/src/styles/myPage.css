@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'han-VeryBold';
+    src: url("../fonts/NotoSansKR-Black.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+
 body
 {
 background-color: #EAE9D5;
@@ -29,8 +44,7 @@ background-color: #EAE9D5;
     border-radius: 25px;
     color:white;
     font-size: 25px;
-    font-weight: bold;
-    font-family: "맑은고딕";
+    font-family: "han-Bold";
     cursor:pointer;
 }
 .log-out {
@@ -45,8 +59,7 @@ background-color: #EAE9D5;
     border-radius: 25px;
     color:white;
     font-size: 25px;
-    font-weight: bold;
-    font-family: "맑은고딕";
+    font-family: "han-Bold";
     cursor:pointer;
 }
 .img-DL {
@@ -67,7 +80,9 @@ background-color: #EAE9D5;
     border: none;
     border-radius: 25px;
     background-color: white;
-    font-size: 23px;
+    font-size: 24px;
+    font-family: "han-Bold";
+    color:black;
     text-align: center;
 }
 
@@ -77,6 +92,7 @@ background-color: #EAE9D5;
     width: 150px;
     height: 40px;
     font-size: 20px;
+    font-family: "han-Regular";
     color: white;
     border: none;
     border-radius: 10px;
@@ -91,6 +107,7 @@ background-color: #EAE9D5;
     width: 150px;
     height: 40px;
     font-size: 20px;
+    font-family: "han-Regular";
     color: white;
     border: none;
     border-radius: 10px;
@@ -117,11 +134,11 @@ background-color: #EAE9D5;
     float :left;
     margin-top: 80px;
     margin-left: 830px;
-    font-family: "나눔스퀘어";
+    font-family: "han-Bold";
+    line-height: 40px;
     font-size: 25px;
     background-color: #6788B1;
     color: white;
-    font-weight: bold;
     border:none;
     border-radius:25px;
 }

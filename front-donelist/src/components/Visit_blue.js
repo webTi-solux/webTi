@@ -44,6 +44,11 @@ const VisitQ1_area = styled.div`
   border: solid ${(props) => props.color || "#6582BB"};
   margin-left: 100px;
   margin-top: 120px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const VisitQ2_question = styled.div`
@@ -65,6 +70,11 @@ const VisitQ2_area = styled.div`
   border: solid ${(props) => props.color || "#6582BB"};
   margin-left: 100px;
   margin-top: 280px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const VisitQ3_question = styled.div`
@@ -86,6 +96,11 @@ const VisitQ3_area = styled.div`
   border: solid ${(props) => props.color || "#6582BB"};
   margin-left: 100px;
   margin-top: 480px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const Activity_Tag_Area = styled.div`
@@ -99,8 +114,11 @@ const Activity_Tag_Area = styled.div`
   color: white;
   text-align: center;
   line-height: 30px;
-  font-family: "나눔스퀘어";
-  font-weight: bold;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
 `;
 
 const Major_Tag_Area = styled.div`
@@ -114,8 +132,11 @@ const Major_Tag_Area = styled.div`
   color: white;
   text-align: center;
   line-height: 30px;
-  font-family: "나눔스퀘어";
-  font-weight: bold;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
 `;
 
 const Visit_Btn_Area = styled.div`
@@ -126,6 +147,12 @@ const Visit_Btn_Area = styled.div`
   background-color: ${(props) => props.color || "#6582BB"};
   margin-left: 980px;
   margin-top: 190px;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
+
 `;
 
 const Visit_blue = ({ donelist }) => {
@@ -173,10 +200,10 @@ const Visit_blue = ({ donelist }) => {
                 </button>
                 <div className="sendingMsg">쪽지</div>
               </div>
-              <Comment />
+              <Comment/>
               {popup && (
                 <WriteMessage
-                  closeModal={() => setPopup(!popup)}
+                  closeModal={() => setPopup(!popup)} donetitle={donelist.title} doneId={donelist._id} receiveId={donelist.userId}
                 ></WriteMessage>
               )}
             </Visit_Btn_Area>

@@ -44,6 +44,11 @@ const VisitQ1_area = styled.div`
   border: solid ${(props) => props.color || "#C7705E"};
   margin-left: 100px;
   margin-top: 120px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const VisitQ2_question = styled.div`
@@ -65,6 +70,11 @@ const VisitQ2_area = styled.div`
   border: solid ${(props) => props.color || "#C7705E"};
   margin-left: 100px;
   margin-top: 280px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const VisitQ3_question = styled.div`
@@ -86,6 +96,11 @@ const VisitQ3_area = styled.div`
   border: solid ${(props) => props.color || "#C7705E"};
   margin-left: 100px;
   margin-top: 480px;
+  @font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 `;
 
 const Activity_Tag_Area = styled.div`
@@ -99,8 +114,11 @@ const Activity_Tag_Area = styled.div`
   color: white;
   text-align: center;
   line-height: 30px;
-  font-family: "나눔스퀘어";
-  font-weight: bold;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
 `;
 
 const Major_Tag_Area = styled.div`
@@ -114,8 +132,11 @@ const Major_Tag_Area = styled.div`
   color: white;
   text-align: center;
   line-height: 30px;
-  font-family: "나눔스퀘어";
-  font-weight: bold;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
 `;
 
 const Visit_Btn_Area = styled.div`
@@ -126,6 +147,11 @@ const Visit_Btn_Area = styled.div`
   background-color: ${(props) => props.color || "#C7705E"};
   margin-left: 980px;
   margin-top: 190px;
+  @font-face {
+    font-family: 'han-Bold';
+    src: url("../fonts/NotoSansKR-Bold.otf") format('truetype');
+}
+font-family: 'han-Bold';
 `;
 
 const Visit_orange = ({ donelist }) => {
@@ -159,32 +185,37 @@ const Visit_orange = ({ donelist }) => {
         </div>
         <Activity_Tag_Area>{seeActTag} </Activity_Tag_Area>
         <Major_Tag_Area>{seeMajorTag}</Major_Tag_Area>
-        {sessionStorage.userId !== donelist.userId ? 
-        <div>
-        <Visit_Btn_Area>
-          <LikeBtn doneId={donelist._id} />
+        {sessionStorage.userId !== donelist.userId ? (
           <div>
-            <button
-              type="button"
-              className="MessageBtn"
-              onClick={() => setPopup(!popup)}>
-              <img width="47px" src={toSendingMsg} />
-            </button>
-            <div className="sendingMsg">쪽지</div>
+            <Visit_Btn_Area>
+              <LikeBtn doneId={donelist._id} />
+              <div>
+                <button
+                  type="button"
+                  className="MessageBtn"
+                  onClick={() => setPopup(!popup)}
+                >
+                  <img width="47px" src={toSendingMsg} />
+                </button>
+                <div className="sendingMsg">쪽지</div>
+              </div>
+              <Comment/>
+              {popup && (
+                <WriteMessage
+                  closeModal={() => setPopup(!popup)} donetitle={donelist.title} doneId={donelist._id} receiveId={donelist.userId}
+                ></WriteMessage>
+              )}
+            </Visit_Btn_Area>
           </div>
-          <Comment />
-          {popup && (
-            <WriteMessage closeModal={() => setPopup(!popup)}></WriteMessage>
-          )}
-        </Visit_Btn_Area>
-      </div> :
-      <div>
-      <Visit_Btn_Area>
-        <div>
-            <p className="modifydone">수정하기</p>
-        </div>
-      </Visit_Btn_Area>
-    </div>}
+        ) : (
+          <div>
+            <Visit_Btn_Area>
+              <div>
+                <p className="modifydone">수정하기</p>
+              </div>
+            </Visit_Btn_Area>
+          </div>
+        )}
       </div>
     </div>
   );

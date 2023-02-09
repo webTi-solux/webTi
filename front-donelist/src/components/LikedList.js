@@ -30,7 +30,7 @@ const LikedList= ({doneId}) => {
                     <Link to={`/visit-detail/${doneId._id}`}>
                         <div className="liked-text">
                         <img src={donelist_D} alt="dl_D" className="img-DL_D"></img>
-                        <p className="liked-text-item">{likedUserNick}의 "{title}"</p>
+                        <span className="liked-text-item-nick">{likedUserNick}의 </span><span className="liked-text-item-title"> {title}</span>
                     </div></Link>
                 </div>
 

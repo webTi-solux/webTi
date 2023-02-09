@@ -15,7 +15,7 @@ function ShowAllDoneLists() {
         {
             id : 0,
             imgsrc : preview_1,
-            nickName : "minjin",
+            nickName : "butter",
             startYear : 2021,
         },
         {
@@ -33,7 +33,7 @@ function ShowAllDoneLists() {
         {
             id : 3,
             imgsrc : preview_4,
-            nickName : "minzi",
+            nickName : "sookmyung",
             startYear : 2019,
         },
         

@@ -94,18 +94,7 @@ const CreateDLname = styled.span`
     margin-top: 50px;
     margin-left: 10px;
     color: ${color};
-    @font-face {
-        font-family: 'BlackOpsOne';
-        src: url('../fonts/BlackOpsOne-Regular.ttf') format('truetype');
-        unicode-range:  U+0041-005A,U+0061-007A;
-    }
-
-    @font-face {
-        font-family: 'han';
-        src: url('../fonts/esamanru_Medium.ttf') format('truetype');
-        unicode-range: U+AC00-D7A3;
-    }
-    font-family: 'BlackOpsOne', 'han';
+    font-family: 'BlackOpsOne';
     font-size: 22px;
 `;
 

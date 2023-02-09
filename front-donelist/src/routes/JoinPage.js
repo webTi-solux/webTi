@@ -75,7 +75,7 @@ function JoinPage () {
                 <div className='join-first-input'>
                     <div className='join-v-line'></div>
                     <span className="join-nickname">nickname</span>
-                    <input className="join-input-nickname" value={inputNick} onChange={handleInputNick}  type="text"/>
+                    <input className="join-input-nickname" value={inputNick} onChange={handleInputNick} type="text"/>
                 </div>
                 
                 <div className="join-second-input">

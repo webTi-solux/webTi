@@ -11,11 +11,11 @@ const MsgList = styled.ul`
     flex-wrap: wrap;
 `;
 
-function ReceivedMsgList({ messages }) {
+function ReceivedMsgList({ messages, len, index }) {
     return (
     <div className='received-msg-item'>
         <MsgList >
-            <ReceivedMsgItem message={messages} /><hr className='received-msg-line'/><br/><br/>
+            <ReceivedMsgItem message={messages} index={len-index}/><hr className='received-msg-line'/><br/><br/>
         
         </MsgList>
     </div> 

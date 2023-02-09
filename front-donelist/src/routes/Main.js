@@ -7,6 +7,9 @@ import ModalCreateDL from "../components/ModalCreateDL";
 import DonelistBar from "../components/DonelistBar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import domtoimage from "dom-to-image";
+import { saveAs } from "file-saver";
+import { useRef } from "react";
 
 const Main = (props) => {
 let [adYear, setAdYear] = useState(2020); //가입년도를 숫자로 받는다고 가정
@@ -22,76 +25,98 @@ const showModal = () => {
 
 const [Bar, getBar] = useState([]);
 
-
-
-let {userId} = useParams();
+let { userId } = useParams();
 //console.log(userId)
 //console.log(sessionStorage.userId)
 
 const GetDonelist = async () => {
-    const DL = await axios.get('/donelist/').then((res) => {return res.data});
+    const DL = await axios.get("/donelist/").then((res) => {
+    return res.data;
+    });
     //console.log(DL);
 
     let DLfilter = DL.filter((item) => {
-        return item.userId === sessionStorage.userId
-    })
+    return item.userId === sessionStorage.userId;
+    });
 
-    console.log(DLfilter)
+    console.log(DLfilter);
     getBar(DLfilter);
-
-}
+};
 
 useEffect(() => {
     GetDonelist();
-}, [])
+}, []);
 
 // 임시데이터, DB에 저장된 사용자의 DL 정보 모두 가져와 돌려야 함, Y 값 어떻게할지 생각해봐야함.
-    // const [donelist, setDonelist] = useState({
-    //     title : 'Programming Club "SOLUX"',
-    //     color : "blue",
-    //     startY : 2022,
-    //     startM : 3,
-    //     endY : 2023,
-    //     endM : 1,
-    //     // 몇 번째 던리스트인지. 0 부터, 1씩 증가. (Y 좌표)
-    //     index : 0,
-    // });
+// const [donelist, setDonelist] = useState({
+//     title : 'Programming Club "SOLUX"',
+//     color : "blue",
+//     startY : 2022,
+//     startM : 3,
+//     endY : 2023,
+//     endM : 1,
+//     // 몇 번째 던리스트인지. 0 부터, 1씩 증가. (Y 좌표)
+//     index : 0,
+// });
 
-    //const [counter, setCounter] = useState(0)
-    const MakeDonelist = (donelist) => {
-        // donelist  = {
-        //     ...donelist,
-        //     index: counter
-        // }
-        console.log(donelist);
-        DonelistBar(donelist)
-        //setCounter((prev)=>(prev+1) )
-    }
+//const [counter, setCounter] = useState(0)
+const MakeDonelist = (donelist) => {
+    // donelist  = {
+    //     ...donelist,
+    //     index: counter
+    // }
+    console.log(donelist);
+    DonelistBar(donelist);
+    //setCounter((prev)=>(prev+1) )
+};
 
+const doneRef = useRef();
+const onDownloadBtn = () => {
+    const done = doneRef.current;
+    const filter = (done => {
+        return done.className !== 'downBtn' ||'create-DL-btn-container'
+    })
+    domtoimage
+    .toBlob(document.querySelector(".DL-down"), {filter: filter})
+    .then((blob) => {
+        saveAs(blob, "mydonelist.png");
+    });
+};
 
 return (
     <div className="DL-container">
-        <NavAfterLogin />
-        <div className="DL-sub-container">
-            {[...Array(nowYear - adYear +1)].map((undefined, index) => {
-            //calendar 1세트를, 현재에서 가입연도를 뺀 만큼 반복 나열하고자 함
-            return (
-                <div key={index.id}>
-                <span key={index.id} className="LD-year">{`${nowYear-index}`}</span>
-                <CalendarBar key={index.id}/>
-                </div>
-            );
-            })}
+    <NavAfterLogin />
+    <div>
+        <button className="downBtn" onClick={onDownloadBtn}>
+        save Done
+        </button>
+    </div>
+    <div className="DL-down">
+    <div className="DL-sub-container">
+        {[...Array(nowYear - adYear + 1)].map((undefined, index) => {
+        //calendar 1세트를, 현재에서 가입연도를 뺀 만큼 반복 나열하고자 함
+        return (
+            <div key={index.id}>
+            <span key={index.id} className="LD-year">{`${
+                nowYear - index
+            }`}</span>
+            <CalendarBar key={index.id} />
+            </div>
+        );
+        })}
+    </div>
+    {Bar.map((bar, index) => (
+        <DonelistBar donelist={bar} index={index} />
+    ))}
+    </div>
 
-        </div>
-        {Bar.map((bar, index) => <DonelistBar donelist={bar} index={index}/> )}
-        
-        <div className="create-DL-btn-container">
-        <button 
-        className="create-DL-btn" onClick={showModal}> + </button>
+    <div className="create-DL-btn-container">
+        <button className="create-DL-btn" onClick={showModal}>
+        {" "}
+        +{" "}
+        </button>
         {ModalHandle && <ModalCreateDL setModalOpen={setModalHandle} />}
-        </div>
-
+    </div>
     </div>
 );
 };

@@ -8,7 +8,11 @@ position: absolute;
 float:left;
 margin-top: 50px;
 margin-left: 695px;
-font-family: "맑은고딕";
+@font-face {
+    font-family: 'han-Regular';
+    src: url("../fonts/NotoSansKR-Regular.otf") format('truetype');
+}
+font-family: 'han-Regular';
 font-size: 20px;
 `;
 

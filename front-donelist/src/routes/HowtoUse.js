@@ -11,7 +11,7 @@ import "../styles/HowtoUse.css"
 function HowtoUse() {
     return (
         <div>
-        <NavBeforeLogin /> {/*or <NavAfterLogin/>*/}
+        {sessionStorage.length > 0 ? <NavAfterLogin/> : <NavBeforeLogin />}
         <div className="howtouse-container1">
             <div><img src={introduce1} alt="introduce1" className="howtouse-logoImg"/></div>
             <div className="howtouse-Team">Team WebTi</div>
