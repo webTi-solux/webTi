@@ -60,14 +60,14 @@
 .liked-text-item-nick {
     position: absolute;
     margin-left: 40px;
-    margin-top: 10px;
+    margin-top: 9px;
     font-family: "han-Medium";
 }
 
 .liked-text-item-title {
     position: absolute;
     margin-left: 120px;
-    margin-top: 10px;
+    margin-top: 11px;
     font-family: "Alike";
     font-weight: bold;
 }
